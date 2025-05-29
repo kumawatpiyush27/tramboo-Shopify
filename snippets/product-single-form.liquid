@@ -97,7 +97,7 @@
         var addToCartPrice = document.getElementById('add-to-cart-price');
         var customizationPrice = document.getElementById('customization-price');
         var basePrice = parseInt({{ current_variant.price | divided_by: 100 }});
-        var customCharge = 50;
+        var customCharge = 200;
         // Open modal
         if (customizeBtn && modal && closeBtn) {
           customizeBtn.addEventListener('click', function() {
