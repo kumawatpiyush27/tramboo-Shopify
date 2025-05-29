@@ -271,8 +271,7 @@
                             {%- endfor -%}
                         </sp-cart-items>
                     </form>
-                    {% render 'checkout-customize-popup' %}
-<div class="sp-drawer-cart-footer-wrapper">
+                    <div class="sp-drawer-cart-footer-wrapper">
                         <div class="sp-drawer-cart-totals">
                             <h2 class="sp-drawer-total-heading body-font">{{ 'shinepages.general.cart.estimated_total' | t }}</h2>
                             <p class="sp-drawer-total-value body-font">{{ cart.total_price | money_with_currency }}</p>

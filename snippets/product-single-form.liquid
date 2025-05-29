@@ -78,12 +78,12 @@
         <form id="customize-form" style="margin-top:16px;">
           <input type="text" id="engraving-name" name="properties[Engraving Name]" maxlength="12" autocomplete="off" placeholder="Your Engraving Name" style="width:100%;padding:12px 10px;font-size:16px;border-radius:6px;border:1px solid #ccc;text-align:center;margin-bottom:6px;">
           <div style="color:#888;font-size:12px;margin-bottom:10px;">Limit text to alphabets, numbers, no emojis or special characters. Max 12 characters allowed.</div>
-          <button id="add-to-cart-custom" type="button" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Add to Cart (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 50 }}</span>)</button>
+          <button id="add-to-cart-custom" type="submit" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Add to Cart (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 50 }}</span>)</button>
+          <button id="buy-now-custom" type="button" style="display:none;width:100%;background:#111;color:#fff;padding:12px 0;font-size:16px;font-weight:600;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now</button>
         </form>
         <a href="#" id="skip-customization" style="display:block;color:#1e90ff;font-size:14px;text-decoration:underline;margin-top:8px;">Skip Personalization</a>
       </div>
     </div>
-
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var customizeBtn = document.getElementById('customize-product-btn');
@@ -126,27 +126,38 @@
         function isValidName(name) {
           return /^[A-Za-z0-9 ]{1,12}$/.test(name);
         }
-        if (engravingInput) {
+        function updatePreview() {
+          var val = engravingInput.value;
+          if (isValidName(val)) {
+            engravingPreview.textContent = val;
+            addToCartBtn.style.display = 'block';
+          } else {
+            engravingPreview.textContent = '';
+            addToCartBtn.style.display = 'none';
+          }
+        }
+        if (engravingInput && engravingPreview && addToCartBtn) {
+          engravingInput.addEventListener('input', updatePreview);
+        }
+        // Show Buy Now button when Add to Cart is visible
+        var buyNowBtn = document.getElementById('buy-now-custom');
+        if (engravingInput && buyNowBtn && addToCartBtn) {
           engravingInput.addEventListener('input', function() {
-            var name = engravingInput.value;
-            if (isValidName(name)) {
-              engravingPreview.textContent = name;
-              if (addToCartBtn) addToCartBtn.style.display = 'block';
+            if (addToCartBtn.style.display !== 'none') {
+              buyNowBtn.style.display = '';
             } else {
-              engravingPreview.textContent = '';
-              if (addToCartBtn) addToCartBtn.style.display = 'none';
+              buyNowBtn.style.display = 'none';
             }
           });
         }
-        if (addToCartBtn) {
-          addToCartBtn.onclick = function(e) {
-            e.preventDefault();
+        if (buyNowBtn) {
+          buyNowBtn.addEventListener('click', function() {
             var name = engravingInput.value;
             if (!isValidName(name)) {
               engravingInput.focus();
               return;
             }
-            addToCartBtn.disabled = true;
+            // Add personalized product with engraving, then customizer product, then go to checkout
             fetch('/cart/add.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -157,18 +168,18 @@
               })
             })
             .then(function(res) { return res.json(); })
-            .then(function(data) {
-              window.location.href = '/checkout';
-            })
-            .catch(function(err) {
-              alert('Could not add to cart. Please try again.');
-              addToCartBtn.disabled = false;
+            .then(function() {
+              buyNowWithCustomizer({{ current_variant.id }}, 'product-customizer-item-customizations');
             });
-          }
+          });
         }
-        // Remove default Add to Cart submit handler for popup
+        // Update price
+        if (addToCartPrice && customizationPrice) {
+          addToCartPrice.textContent = basePrice + customCharge;
+          customizationPrice.textContent = basePrice + customCharge;
+        }
+        // Add to cart with custom property
         if (customizeForm) {
-          customizeForm.onsubmit = function(e) { e.preventDefault(); return false; }
           customizeForm.addEventListener('submit', function(e) {
             e.preventDefault();
             var name = engravingInput.value;
@@ -188,8 +199,16 @@
             })
             .then(function(res) { return res.json(); })
             .then(function(data) {
-              // Directly go to checkout after updating cart
-              window.location.href = '/checkout';
+              // Open cart drawer
+              if (window.BT && typeof BT.runCartAction === 'function') {
+                BT.runCartAction(data, function(){});
+              } else {
+                var cartDrawerBtn = document.querySelector('.cart-sidebar-trigger');
+                if(cartDrawerBtn) cartDrawerBtn.click();
+              }
+              // Show custom checkout popup
+              setTimeout(function() { showCheckoutCustomizePopup(); }, 400);
+              window.__JUST_ADDED_VARIANT_ID = {{ current_variant.id }};
             })
             .catch(function(err) {
               alert('Could not add to cart. Please try again.');
@@ -203,6 +222,18 @@
         }
       });
     </script>
+    {% render 'checkout-customize-popup' %}
+    <script>
+    // Handle custom checkout popup actions
+    document.addEventListener('DOMContentLoaded', function() {
+      var interval = null;
+      function getCart(callback) {
+        fetch('/cart.js').then(r=>r.json()).then(callback);
+      }
+      function updateCart(items, callback) {
+        fetch('/cart/update.js', {
+          method:'POST',
+          headers: {'Content-Type':'application/json'},
           body: JSON.stringify({ updates: items })
         }).then(r=>r.json()).then(callback);
       }
