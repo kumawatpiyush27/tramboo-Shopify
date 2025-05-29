@@ -224,7 +224,7 @@
               
             .then(function(data) {
               // Redirect to Shopify native checkout after add to cart
-              window.location.href = '/checkout';
+               buyNowWithCustomizer({{ current_variant.id }}, 'product-customizer-item-customizations');
             })
             .catch(function(err) {
               alert('Could not add to cart. Please try again.');
