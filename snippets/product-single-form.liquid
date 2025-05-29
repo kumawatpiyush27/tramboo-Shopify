@@ -58,10 +58,19 @@
   {%- endif -%}
   {%- if template.suffix != 'quick_view' and template.suffix != 'select_option' -%}
     <!-- Customize Button Start -->
-    <div class="customize-card" onclick="document.getElementById('customize-product-popup').style.display = 'flex'">
+    <div class="customize-card">
       <div>
         <div class="customize-card__title">Make Your Product Personalised</div>
         <div class="customize-card__desc">Get A Customized Engraving And Make It Unmistakably Yours.</div>
+        <button id="customize-product-btn" type="button" class="customize-card__btn" style="margin-top:12px;">Customize</button>
+      </div>
+      <div class="customize-card__icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="24" height="24" rx="6" stroke="#222" stroke-width="2" fill="none"/>
+          <rect x="16" y="24" width="8" height="2" rx="1" fill="#222"/>
+          <path d="M28 16l-6 6" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+          <rect x="25.5" y="13.5" width="5" height="2" rx="1" transform="rotate(45 25.5 13.5)" fill="#222"/>
+        </svg>
       </div>
     </div>
     <style>
@@ -82,13 +91,13 @@
         color: #111;
       }
       .customize-card__desc {
-        color: #2264d1;
+        color:rgb(28, 145, 32);
         font-size: 1rem;
         margin-bottom: 0;
         max-width: 320px;
       }
       .customize-card__btn {
-        background: #1e90ff;
+        background:rgb(32, 162, 52);
         color: #fff;
         padding: 10px 28px;
         font-size: 1rem;
@@ -100,7 +109,7 @@
         margin-top: 12px;
       }
       .customize-card__btn:hover {
-        background: #156fcc;
+        background:rgb(0, 0, 0);
       }
       .customize-card__icon {
         margin-left: 24px;
