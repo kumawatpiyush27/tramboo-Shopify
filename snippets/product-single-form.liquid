@@ -29,10 +29,32 @@
     {%- else -%}
       {%- assign cart_text = 'products.product.sold_out' | t -%}  
     {%- endif -%}  
-    <button class="button button--rad button--one-line add-cart-btn button--single-cart button--cart button--border-transparent flex flex-align-ver flex-align-hoz add-cart-btn--state por{% if template.suffix != 'quick_view' %} button--single-cart-main{% endif %}" type="submit" name="add" title="{{ cart_text | escape }}" aria-label="button" style="height:45px;flex-grow:1;"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
+    <button id="buy-now-btn" class="button button--rad button--one-line add-cart-btn button--single-cart button--cart button--border-transparent flex flex-align-ver flex-align-hoz add-cart-btn--state por{% if template.suffix != 'quick_view' %} button--single-cart-main{% endif %}" type="button" title="Buy Now" aria-label="button" style="height:45px;flex-grow:1;"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
       {%- render 'icon-cart' with add_class: 'button__icon' -%}
-      <span{% if section.settings.enable_cart_animation %} class="ring-little"{% endif %}>{{ cart_text }}</span>
+      <span{% if section.settings.enable_cart_animation %} class="ring-little"{% endif %}>Buy Now</span>
     </button>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var buyNowBtn = document.getElementById('buy-now-btn');
+        if (buyNowBtn) {
+          buyNowBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var variantId = {{ current_variant.id | json }};
+            fetch('/cart/clear.js', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
+              .then(function() {
+                return fetch('/cart/add.js', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ id: variantId, quantity: 1 })
+                });
+              })
+              .then(function() {
+                window.location.href = '/checkout';
+              });
+          });
+        }
+      });
+    </script>
     {%- if has_wishlist_btn -%}
       <a title="{{ 'collections.product_item.add_to_wishlist' | t | escape }}" data-id="{{ product.id }}" href="#" class="button--wl button--wl-text button--wl-single button--single-inline flex flex-align-ver flex-align-hoz transition hidden-xs" data-toggle="tooltip" data-placement="top" data-product-title="{{ product.title | escape }}">
         {% render 'icon-wishlist' %}
@@ -78,7 +100,6 @@
         <form id="customize-form" style="margin-top:16px;">
           <input type="text" id="engraving-name" name="properties[Engraving Name]" maxlength="12" autocomplete="off" placeholder="Your Engraving Name" style="width:100%;padding:12px 10px;font-size:16px;border-radius:6px;border:1px solid #ccc;text-align:center;margin-bottom:6px;">
           <div style="color:#888;font-size:12px;margin-bottom:10px;">Limit text to alphabets, numbers, no emojis or special characters. Max 12 characters allowed.</div>
-          <button id="add-to-cart-custom" type="submit" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Add to Cart (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 50 }}</span>)</button>
           <button id="buy-now-custom" type="button" style="display:none;width:100%;background:#111;color:#fff;padding:12px 0;font-size:16px;font-weight:600;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now</button>
         </form>
         <a href="#" id="skip-customization" style="display:block;color:#1e90ff;font-size:14px;text-decoration:underline;margin-top:8px;">Skip Personalization</a>
@@ -91,10 +112,8 @@
         var closeBtn = document.getElementById('close-customize-modal');
         var engravingInput = document.getElementById('engraving-name');
         var engravingPreview = document.getElementById('engraving-preview');
-        var addToCartBtn = document.getElementById('add-to-cart-custom');
+        var buyNowBtn = document.getElementById('buy-now-custom');
         var skipBtn = document.getElementById('skip-customization');
-        var customizeForm = document.getElementById('customize-form');
-        var addToCartPrice = document.getElementById('add-to-cart-price');
         var customizationPrice = document.getElementById('customization-price');
         var basePrice = parseInt({{ current_variant.price | divided_by: 100 }});
         var customCharge = 50;
@@ -130,26 +149,16 @@
           var val = engravingInput.value;
           if (isValidName(val)) {
             engravingPreview.textContent = val;
-            addToCartBtn.style.display = 'block';
+            buyNowBtn.style.display = 'block';
           } else {
             engravingPreview.textContent = '';
-            addToCartBtn.style.display = 'none';
+            buyNowBtn.style.display = 'none';
           }
         }
-        if (engravingInput && engravingPreview && addToCartBtn) {
+        if (engravingInput && engravingPreview && buyNowBtn) {
           engravingInput.addEventListener('input', updatePreview);
         }
-        // Show Buy Now button when Add to Cart is visible
-        var buyNowBtn = document.getElementById('buy-now-custom');
-        if (engravingInput && buyNowBtn && addToCartBtn) {
-          engravingInput.addEventListener('input', function() {
-            if (addToCartBtn.style.display !== 'none') {
-              buyNowBtn.style.display = '';
-            } else {
-              buyNowBtn.style.display = 'none';
-            }
-          });
-        }
+        // Buy Now button action
         if (buyNowBtn) {
           buyNowBtn.addEventListener('click', function() {
             var name = engravingInput.value;
@@ -157,7 +166,7 @@
               engravingInput.focus();
               return;
             }
-            // Add personalized product with engraving, then customizer product, then go to checkout
+            // Add personalized product with engraving, then go to checkout
             fetch('/cart/add.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -169,103 +178,22 @@
             })
             .then(function(res) { return res.json(); })
             .then(function() {
-              buyNowWithCustomizer({{ current_variant.id }}, 'product-customizer-item-customizations');
+              window.location.href = '/checkout';
             });
           });
         }
         // Update price
-        if (addToCartPrice && customizationPrice) {
-          addToCartPrice.textContent = basePrice + customCharge;
+        if (customizationPrice) {
           customizationPrice.textContent = basePrice + customCharge;
-        }
-        // Add to cart with custom property
-        if (customizeForm) {
-          customizeForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var name = engravingInput.value;
-            if (!isValidName(name)) {
-              engravingInput.focus();
-              return;
-            }
-            // Add to cart via AJAX
-            fetch('/cart/add.js', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                id: {{ current_variant.id }},
-                quantity: 1,
-                properties: { 'Engraving Name': name, 'Personalization Charge': '+₹50' }
-              })
-            })
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
-              // Redirect to Shopify native checkout after add to cart
-              window.location.href = '/checkout';
-            })
-            .catch(function(err) {
-              alert('Could not add to cart. Please try again.');
-            });
-          });
         }
         function resetPopup() {
           if (engravingInput) engravingInput.value = '';
           if (engravingPreview) engravingPreview.textContent = '';
-          if (addToCartBtn) addToCartBtn.style.display = 'none';
+          if (buyNowBtn) buyNowBtn.style.display = 'none';
         }
       });
     </script>
     {% render 'checkout-customize-popup' %}
-    <script>
-    // Handle custom checkout popup actions
-    document.addEventListener('DOMContentLoaded', function() {
-      var interval = null;
-      function getCart(callback) {
-        fetch('/cart.js').then(r=>r.json()).then(callback);
-      }
-      function updateCart(items, callback) {
-        fetch('/cart/update.js', {
-          method:'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({ updates: items })
-        }).then(r=>r.json()).then(callback);
-      }
-      function removeAllExcept(variantId, callback) {
-        getCart(function(cart) {
-          var updates = {};
-          cart.items.forEach(function(item) {
-            updates[item.variant_id] = (item.variant_id == variantId) ? item.quantity : 0;
-          });
-          updateCart(updates, callback);
-        });
-      }
-      function removeVariant(variantId, callback) {
-        getCart(function(cart) {
-          var updates = {};
-          cart.items.forEach(function(item) {
-            updates[item.variant_id] = (item.variant_id == variantId) ? 0 : item.quantity;
-          });
-          updateCart(updates, callback);
-        });
-      }
-      var popup = document.getElementById('checkout-customize-popup');
-      if(popup) {
-        document.getElementById('checkout-with-customize').onclick = function() {
-          var vid = window.__JUST_ADDED_VARIANT_ID;
-          if (!vid) return;
-          removeAllExcept(vid, function() {
-            window.location.href = '/checkout';
-          });
-        };
-        document.getElementById('checkout-with-other').onclick = function() {
-          var vid = window.__JUST_ADDED_VARIANT_ID;
-          if (!vid) return;
-          removeVariant(vid, function() {
-            // Just close the popup, cart remains with other items
-          });
-        };
-      }
-    });
-    </script>
     <!-- Customize Button End -->
     {%- assign cart_terms_for_id = 'single-page-' | append: section.id -%}
     {%- render 'cart-terms' with for_id: cart_terms_for_id -%}

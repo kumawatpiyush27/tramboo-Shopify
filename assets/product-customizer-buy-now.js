@@ -25,3 +25,18 @@ function buyNowWithCustomizer(currentVariantId, customizerProductHandle) {
       });
   });
 }
+
+// Simple Buy Now function for direct checkout (if customizer not needed)
+function buyNowDirect(variantId) {
+  fetch('/cart/clear.js', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
+    .then(function() {
+      return fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: variantId, quantity: 1 })
+      });
+    })
+    .then(function() {
+      window.location.href = '/checkout';
+    });
+}
