@@ -168,6 +168,18 @@
               })
             })
             .then(function(res) { return res.json(); })
+              .then(function() {
+              // 2. Add addon product
+              return fetch('/cart/add.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  id: 48603629060404, // Addon variant ID
+                  quantity: 1
+                })
+              });
+            })
+              
             .then(function() {
               buyNowWithCustomizer({{ current_variant.id }}, 'product-customizer-item-customizations');
             });
