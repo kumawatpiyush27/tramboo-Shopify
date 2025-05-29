@@ -9,7 +9,13 @@
 <script>
 // Logic for the post-add-to-cart popup
 function showCheckoutCustomizePopup() {
-  document.getElementById('checkout-customize-popup').style.display = 'flex';
+  var popup = document.getElementById('checkout-customize-popup');
+  if (popup) {
+    popup.style.display = 'flex';
+    popup.style.alignItems = 'center';
+    popup.style.justifyContent = 'center';
+    popup.scrollTop = 0;
+  }
 }
 function hideCheckoutCustomizePopup() {
   document.getElementById('checkout-customize-popup').style.display = 'none';
