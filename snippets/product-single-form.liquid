@@ -171,7 +171,11 @@
                 var cartDrawerBtn = document.querySelector('.cart-sidebar-trigger');
                 if(cartDrawerBtn) cartDrawerBtn.click();
               }
-              // No redirect
+              // Success feedback
+              showSuccessMessage('Added to cart successfully!');
+              // Reset and close popup
+              resetPopup();
+              closeCustomizePopup();
             })
             .catch(function(err) {
               alert('Could not add to cart. Please try again.');
@@ -182,6 +186,26 @@
           if (engravingInput) engravingInput.value = '';
           if (engravingPreview) engravingPreview.textContent = '';
           if (addToCartBtn) addToCartBtn.style.display = 'none';
+          var noteInput = document.getElementById('custom-note');
+          if (noteInput) noteInput.value = '';
+        }
+        function showSuccessMessage(msg) {
+          var msgDiv = document.createElement('div');
+          msgDiv.textContent = msg;
+          msgDiv.style.background = '#d4edda';
+          msgDiv.style.color = '#155724';
+          msgDiv.style.padding = '8px';
+          msgDiv.style.margin = '10px 0';
+          msgDiv.style.borderRadius = '4px';
+          msgDiv.style.textAlign = 'center';
+          msgDiv.style.fontWeight = 'bold';
+          document.body.appendChild(msgDiv);
+          setTimeout(function(){ msgDiv.remove(); }, 2000);
+        }
+        function closeCustomizePopup() {
+          var popup = document.getElementById('customize-popup');
+          if (popup) popup.style.display = 'none';
+        }
         }
       });
     </script>

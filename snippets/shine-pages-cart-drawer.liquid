@@ -140,6 +140,18 @@
                                     <div class="sp-drawer-cart-item-content">
                                         <a href="{{ item.url }}" class="sp-drawer-cart-item-name body-font">
                                             {{- item.product.title | escape -}}
+                                            {% if item.properties and item.properties.size > 0 %}
+                                                <div class="sp-drawer-cart-item-properties">
+                                                    {% for p in item.properties %}
+                                                        {% if p.last != blank %}
+                                                            <div class="sp-cart-property-row">
+                                                                <span class="sp-cart-property-label">{{ p.first }}:</span>
+                                                                <span class="sp-cart-property-value">{{ p.last }}</span>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            {% endif %}
                                         </a>
                                         {%- if item.original_price != item.final_price -%}
                                             <div class="sp-drawer-cart-item-price body-font">
@@ -148,12 +160,18 @@
                                                 </span>
                                                 <span class="cart-item-final-price">
                                                     {{ item.final_price | money }}
+                                                    {% if item.properties['Personalization Charge'] %}
+                                                        <span class="sp-cart-personalization-charge">+{{ item.properties['Personalization Charge'] }}</span>
+                                                    {% endif %}
                                                 </span>
                                             </div>
                                         {%- else -%}
                                             <div class="sp-drawer-cart-item-price body-font">
                                                 <span class="cart-item-final-price">
                                                     {{ item.original_price | money }}
+                                                    {% if item.properties['Personalization Charge'] %}
+                                                        <span class="sp-cart-personalization-charge">+{{ item.properties['Personalization Charge'] }}</span>
+                                                    {% endif %}
                                                 </span>
                                             </div>
                                         {%- endif -%}
