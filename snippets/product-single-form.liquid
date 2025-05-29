@@ -140,7 +140,7 @@
           engravingInput.addEventListener('input', updatePreview);
         }
         // Show Buy Now button when Add to Cart is visible
-       
+        var buyNowBtn = document.getElementById('buy-now-custom');
         if (buyNowBtn) {
           buyNowBtn.addEventListener('click', function() {
             var name = engravingInput.value;
