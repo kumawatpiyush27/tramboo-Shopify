@@ -58,19 +58,10 @@
   {%- endif -%}
   {%- if template.suffix != 'quick_view' and template.suffix != 'select_option' -%}
     <!-- Customize Button Start -->
-    <div class="customize-card" id="customize-product-btn">
+    <div class="customize-card" onclick="document.getElementById('customize-product-popup').style.display = 'flex'">
       <div>
         <div class="customize-card__title">Make Your Product Personalised</div>
         <div class="customize-card__desc">Get A Customized Engraving And Make It Unmistakably Yours.</div>
-        <button  type="button" class="customize-card__btn" style="margin-top:12px;">Customize</button>
-      </div>
-      <div class="customize-card__icon">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="8" y="8" width="24" height="24" rx="6" stroke="#222" stroke-width="2" fill="none"/>
-          <rect x="16" y="24" width="8" height="2" rx="1" fill="#222"/>
-          <path d="M28 16l-6 6" stroke="#222" stroke-width="2" stroke-linecap="round"/>
-          <rect x="25.5" y="13.5" width="5" height="2" rx="1" transform="rotate(45 25.5 13.5)" fill="#222"/>
-        </svg>
       </div>
     </div>
     <style>
