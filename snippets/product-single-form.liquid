@@ -29,32 +29,10 @@
     {%- else -%}
       {%- assign cart_text = 'products.product.sold_out' | t -%}  
     {%- endif -%}  
-    <button id="buy-now-btn" class="button button--rad button--one-line add-cart-btn button--single-cart button--cart button--border-transparent flex flex-align-ver flex-align-hoz add-cart-btn--state por{% if template.suffix != 'quick_view' %} button--single-cart-main{% endif %}" type="button" title="Buy Now" aria-label="button" style="height:45px;flex-grow:1;"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
+    <button class="button button--rad button--one-line add-cart-btn button--single-cart button--cart button--border-transparent flex flex-align-ver flex-align-hoz add-cart-btn--state por{% if template.suffix != 'quick_view' %} button--single-cart-main{% endif %}" type="submit" name="add" title="{{ cart_text | escape }}" aria-label="button" style="height:45px;flex-grow:1;"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
       {%- render 'icon-cart' with add_class: 'button__icon' -%}
-      <span{% if section.settings.enable_cart_animation %} class="ring-little"{% endif %}>Buy Now</span>
+      <span{% if section.settings.enable_cart_animation %} class="ring-little"{% endif %}>{{ cart_text }}</span>
     </button>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var buyNowBtn = document.getElementById('buy-now-btn');
-        if (buyNowBtn) {
-          buyNowBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            var variantId = {{ current_variant.id | json }};
-            fetch('/cart/clear.js', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
-              .then(function() {
-                return fetch('/cart/add.js', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ id: variantId, quantity: 1 })
-                });
-              })
-              .then(function() {
-                window.location.href = '/checkout';
-              });
-          });
-        }
-      });
-    </script>
     {%- if has_wishlist_btn -%}
       <a title="{{ 'collections.product_item.add_to_wishlist' | t | escape }}" data-id="{{ product.id }}" href="#" class="button--wl button--wl-text button--wl-single button--single-inline flex flex-align-ver flex-align-hoz transition hidden-xs" data-toggle="tooltip" data-placement="top" data-product-title="{{ product.title | escape }}">
         {% render 'icon-wishlist' %}
