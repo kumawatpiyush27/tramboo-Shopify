@@ -1700,11 +1700,6 @@
         "disabled": true,
         "settings": {}
       },
-      "6065014864672580889": {
-        "type": "shopify://apps/amp-slide-cart-drawer/blocks/app-embed/0a410b8d-7dc4-4f2d-b4e8-c12d34fd2255",
-        "disabled": true,
-        "settings": {}
-      },
       "5918707185744429496": {
         "type": "shopify://apps/optis-product-options-variant/blocks/bss-po-script/2c446099-c349-4e73-80cd-49c9770b7807",
         "disabled": true,
@@ -1754,6 +1749,11 @@
       "13672250894428551832": {
         "type": "shopify://apps/qikify-slide-cart/blocks/app-embed/39da5d6e-3e04-4687-bc69-e23fafb93294",
         "disabled": true,
+        "settings": {}
+      },
+      "6065014864672580889": {
+        "type": "shopify://apps/amp-slide-cart-drawer/blocks/app-embed/0a410b8d-7dc4-4f2d-b4e8-c12d34fd2255",
+        "disabled": false,
         "settings": {}
       }
     }
