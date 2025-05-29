@@ -159,10 +159,21 @@
               body: JSON.stringify({
                 id: {{ current_variant.id }},
                 quantity: 1,
-                properties: { 'Engraving Name': name, 'Personalization Charge': '+₹50' }
+                properties: { 'Engraving Name': name, 'Personalization Charge': '+₹200' }
               })
             })
             .then(function(res) { return res.json(); })
+               .then(function() {
+              // 2. Add addon product
+              return fetch('/cart/add.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  id: 48603629060404, // Addon variant ID
+                  quantity: 1
+                })
+              });
+            })
             .then(function(data) {
               // Open cart drawer
               if (window.BT && typeof BT.runCartAction === 'function') {
