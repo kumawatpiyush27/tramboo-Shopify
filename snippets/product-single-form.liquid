@@ -164,7 +164,14 @@
             })
             .then(function(res) { return res.json(); })
             .then(function(data) {
-              window.location.href = '/cart';
+              if (window.BT && typeof BT.runCartAction === 'function') {
+                BT.runCartAction(data, function(){});
+              } else {
+                // fallback: try to trigger cart drawer or popup
+                var cartDrawerBtn = document.querySelector('.cart-sidebar-trigger');
+                if(cartDrawerBtn) cartDrawerBtn.click();
+              }
+              // No redirect
             })
             .catch(function(err) {
               alert('Could not add to cart. Please try again.');
