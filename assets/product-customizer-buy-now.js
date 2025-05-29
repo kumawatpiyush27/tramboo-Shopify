@@ -20,6 +20,7 @@ function buyNowWithCustomizer(currentVariantId, customizerProductHandle) {
         });
       })
       .then(function() {
+        // Always redirect to Shopify native checkout
         window.location.href = '/checkout';
       });
   });
