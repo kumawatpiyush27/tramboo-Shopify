@@ -164,15 +164,16 @@
             })
             .then(function(res) { return res.json(); })
             .then(function(data) {
-              window.location.href = '/cart';
+              // Open cart drawer
               if (window.BT && typeof BT.runCartAction === 'function') {
                 BT.runCartAction(data, function(){});
               } else {
-                // fallback: try to trigger cart drawer or popup
                 var cartDrawerBtn = document.querySelector('.cart-sidebar-trigger');
                 if(cartDrawerBtn) cartDrawerBtn.click();
               }
-              // No redirect
+              // Show custom checkout popup
+              setTimeout(function() { showCheckoutCustomizePopup(); }, 400);
+              window.__JUST_ADDED_VARIANT_ID = {{ current_variant.id }};
             })
             .catch(function(err) {
               alert('Could not add to cart. Please try again.');
@@ -185,6 +186,58 @@
           if (addToCartBtn) addToCartBtn.style.display = 'none';
         }
       });
+    </script>
+    {% render 'checkout-customize-popup' %}
+    <script>
+    // Handle custom checkout popup actions
+    document.addEventListener('DOMContentLoaded', function() {
+      var interval = null;
+      function getCart(callback) {
+        fetch('/cart.js').then(r=>r.json()).then(callback);
+      }
+      function updateCart(items, callback) {
+        fetch('/cart/update.js', {
+          method:'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ updates: items })
+        }).then(r=>r.json()).then(callback);
+      }
+      function removeAllExcept(variantId, callback) {
+        getCart(function(cart) {
+          var updates = {};
+          cart.items.forEach(function(item) {
+            updates[item.variant_id] = (item.variant_id == variantId) ? item.quantity : 0;
+          });
+          updateCart(updates, callback);
+        });
+      }
+      function removeVariant(variantId, callback) {
+        getCart(function(cart) {
+          var updates = {};
+          cart.items.forEach(function(item) {
+            updates[item.variant_id] = (item.variant_id == variantId) ? 0 : item.quantity;
+          });
+          updateCart(updates, callback);
+        });
+      }
+      var popup = document.getElementById('checkout-customize-popup');
+      if(popup) {
+        document.getElementById('checkout-with-customize').onclick = function() {
+          var vid = window.__JUST_ADDED_VARIANT_ID;
+          if (!vid) return;
+          removeAllExcept(vid, function() {
+            window.location.href = '/checkout';
+          });
+        };
+        document.getElementById('checkout-with-other').onclick = function() {
+          var vid = window.__JUST_ADDED_VARIANT_ID;
+          if (!vid) return;
+          removeVariant(vid, function() {
+            // Just close the popup, cart remains with other items
+          });
+        };
+      }
+    });
     </script>
     <!-- Customize Button End -->
     {%- assign cart_terms_for_id = 'single-page-' | append: section.id -%}

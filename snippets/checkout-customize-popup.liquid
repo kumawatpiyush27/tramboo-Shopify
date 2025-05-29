@@ -1,0 +1,35 @@
+<!-- Popup for choosing checkout action after adding a customized product -->
+<div id="checkout-customize-popup" style="display:none;position:fixed;z-index:10000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:32px 24px 24px 24px;border-radius:12px;max-width:90vw;width:380px;position:relative;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+    <h3 style="font-size:22px;font-weight:700;margin-bottom:18px;">How do you want to checkout?</h3>
+    <button id="checkout-with-customize" style="width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:12px;">Checkout with Customized Product</button>
+    <button id="checkout-with-other" style="width:100%;background:#f1f1f1;color:#222;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;">Checkout with Other Items</button>
+  </div>
+</div>
+<script>
+// Logic for the post-add-to-cart popup
+function showCheckoutCustomizePopup() {
+  document.getElementById('checkout-customize-popup').style.display = 'flex';
+}
+function hideCheckoutCustomizePopup() {
+  document.getElementById('checkout-customize-popup').style.display = 'none';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var btnCustomize = document.getElementById('checkout-with-customize');
+  var btnOther = document.getElementById('checkout-with-other');
+  if(btnCustomize) {
+    btnCustomize.onclick = function() {
+      hideCheckoutCustomizePopup();
+      window.__CHECKOUT_CUSTOMIZE_ACTION = 'custom';
+      // This will be handled in the main add-to-cart script
+    };
+  }
+  if(btnOther) {
+    btnOther.onclick = function() {
+      hideCheckoutCustomizePopup();
+      window.__CHECKOUT_CUSTOMIZE_ACTION = 'other';
+      // This will be handled in the main add-to-cart script
+    };
+  }
+});
+</script>
