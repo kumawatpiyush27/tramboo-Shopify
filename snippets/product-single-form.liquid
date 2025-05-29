@@ -92,7 +92,8 @@
         var closeBtn = document.getElementById('close-customize-modal');
         var engravingInput = document.getElementById('engraving-name');
         var engravingPreview = document.getElementById('engraving-preview');
-        var addToCartBtn = document.getElementById('add-to-cart-custom');
+        var gokwikBtnWrap = document.getElementById('gokwik-buy-now-popup-wrap');
+        var gokwikBtn = document.getElementById('gokwik-buy-now');
         var skipBtn = document.getElementById('skip-customization');
         var customizeForm = document.getElementById('customize-form');
         var addToCartPrice = document.getElementById('add-to-cart-price');
@@ -127,26 +128,59 @@
         function isValidName(name) {
           return /^[A-Za-z0-9 ]{1,12}$/.test(name);
         }
-        function updatePreview() {
-          var val = engravingInput.value;
-          if (isValidName(val)) {
-            engravingPreview.textContent = val;
-            addToCartBtn.style.display = 'block';
-          } else {
-            engravingPreview.textContent = '';
-            addToCartBtn.style.display = 'none';
+        if (engravingInput) {
+          engravingInput.addEventListener('input', function() {
+            var name = engravingInput.value;
+            if (isValidName(name)) {
+              engravingPreview.textContent = name;
+              if (gokwikBtnWrap) gokwikBtnWrap.style.display = 'block';
+              if (gokwikBtn) {
+                gokwikBtn.disabled = false;
+                gokwikBtn.classList.remove('disabled');
+              }
+            } else {
+              engravingPreview.textContent = '';
+              if (gokwikBtnWrap) gokwikBtnWrap.style.display = 'none';
+              if (gokwikBtn) {
+                gokwikBtn.disabled = true;
+                gokwikBtn.classList.add('disabled');
+              }
+            }
+          });
+        }
+        if (gokwikBtn) {
+          gokwikBtn.onclick = function(e) {
+            e.preventDefault();
+            var name = engravingInput.value;
+            if (!isValidName(name)) {
+              engravingInput.focus();
+              return;
+            }
+            gokwikBtn.disabled = true;
+            if (gokwikBtnWrap) gokwikBtnWrap.classList.add('loading');
+            fetch('/cart/add.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                id: {{ current_variant.id }},
+                quantity: 1,
+                properties: { 'Engraving Name': name, 'Personalization Charge': '+₹50' }
+              })
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              window.location.href = '/checkout';
+            })
+            .catch(function(err) {
+              alert('Could not add to cart. Please try again.');
+              gokwikBtn.disabled = false;
+              if (gokwikBtnWrap) gokwikBtnWrap.classList.remove('loading');
+            });
           }
         }
-        if (engravingInput && engravingPreview && addToCartBtn) {
-          engravingInput.addEventListener('input', updatePreview);
-        }
-        // Update price
-        if (addToCartPrice && customizationPrice) {
-          addToCartPrice.textContent = basePrice + customCharge;
-          customizationPrice.textContent = basePrice + customCharge;
-        }
-        // Add to cart with custom property
+        // Remove default Add to Cart submit handler for popup
         if (customizeForm) {
+          customizeForm.onsubmit = function(e) { e.preventDefault(); return false; }
           customizeForm.addEventListener('submit', function(e) {
             e.preventDefault();
             var name = engravingInput.value;
