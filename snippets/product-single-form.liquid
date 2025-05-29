@@ -154,61 +154,7 @@
         <a href="#" id="skip-customization" style="display:block;color:#1e90ff;font-size:14px;text-decoration:underline;margin-top:8px;">Skip Personalization</a>
       </div>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var customizeBtn = document.getElementById('customize-product-btn');
-        var modal = document.getElementById('customize-modal');
-        var closeBtn = document.getElementById('close-customize-modal');
-        var engravingInput = document.getElementById('engraving-name');
-        var engravingPreview = document.getElementById('engraving-preview');
-        var buyNowBtn = document.getElementById('buy-now-custom');
-        var skipBtn = document.getElementById('skip-customization');
-        var customizationPrice = document.getElementById('customization-price');
-        var basePrice = parseInt({{ current_variant.price | divided_by: 100 }});
-        var customCharge = 50;
-        // Open modal
-        if (customizeBtn && modal && closeBtn) {
-          customizeBtn.addEventListener('click', function() {
-            modal.style.display = 'flex';
-          });
-          closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-            resetPopup();
-          });
-          modal.addEventListener('click', function(event) {
-            if (event.target === modal) {
-              modal.style.display = 'n ne';
-              resetPopup();
-            }
-          });
-        }
-        // Skip personalization
-        if (skipBtn) {
-          skipBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            modal.style.display = 'none';
-            resetPopup();
-          });
-        }
-        // Input validation
-        function isValidName(name) {
-          return /^[A-Za-z0-9 ]{1,12}$/.test(name);
-        }
-        function updatePreview() {
-          var val = engravingInput.value;
-          if (isValidName(val)) {
-            engravingPreview.textContent = val;
-            buyNowBtn.style.display = 'block';
-          } else {
-            engravingPreview.textContent = '';
-            buyNowBtn.style.display = 'none';
-          }
-        }
-        if (engravingInput && engravingPreview && buyNowBtn) {
-          engravingInput.addEventListener('input', updatePreview);
-        }
-        // Buy Now button action
-       
+   
    
   {%- endif -%}
 
