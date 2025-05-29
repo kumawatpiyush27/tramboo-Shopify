@@ -78,8 +78,8 @@
         <form id="customize-form" style="margin-top:16px;">
           <input type="text" id="engraving-name" name="properties[Engraving Name]" maxlength="12" autocomplete="off" placeholder="Your Engraving Name" style="width:100%;padding:12px 10px;font-size:16px;border-radius:6px;border:1px solid #ccc;text-align:center;margin-bottom:6px;">
           <div style="color:#888;font-size:12px;margin-bottom:10px;">Limit text to alphabets, numbers, no emojis or special characters. Max 12 characters allowed.</div>
-          <button id="add-to-cart-custom" type="submit" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 200 }}</span>)</button>
-          <button id="buy-now-custom" type="button" style="display:none;width:100%;background:#111;color:#fff;padding:12px 0;font-size:16px;font-weight:600;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now</button>
+          <button id="buy-now-custom" type="submit" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 200 }}</span>)</button>
+          <!-- <button id="buy-now-custom" type="button" style="display:none;width:100%;background:#111;color:#fff;padding:12px 0;font-size:16px;font-weight:600;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now</button> -->
         </form>
         <a href="#" id="skip-customization" style="display:block;color:#1e90ff;font-size:14px;text-decoration:underline;margin-top:8px;">Skip Personalization</a>
       </div>
@@ -91,7 +91,7 @@
         var closeBtn = document.getElementById('close-customize-modal');
         var engravingInput = document.getElementById('engraving-name');
         var engravingPreview = document.getElementById('engraving-preview');
-        var addToCartBtn = document.getElementById('add-to-cart-custom');
+        var addToCartBtn = document.getElementById('buy-now-custom');
         var skipBtn = document.getElementById('skip-customization');
         var customizeForm = document.getElementById('customize-form');
         var addToCartPrice = document.getElementById('add-to-cart-price');
@@ -140,16 +140,7 @@
           engravingInput.addEventListener('input', updatePreview);
         }
         // Show Buy Now button when Add to Cart is visible
-        var buyNowBtn = document.getElementById('buy-now-custom');
-        if (engravingInput && buyNowBtn && addToCartBtn) {
-          engravingInput.addEventListener('input', function() {
-            if (addToCartBtn.style.display !== 'none') {
-              buyNowBtn.style.display = '';
-            } else {
-              buyNowBtn.style.display = 'none';
-            }
-          });
-        }
+       
         if (buyNowBtn) {
           buyNowBtn.addEventListener('click', function() {
             var name = engravingInput.value;
