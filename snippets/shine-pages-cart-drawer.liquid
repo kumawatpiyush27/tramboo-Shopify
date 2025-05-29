@@ -345,6 +345,16 @@
                     </div>
                 </sp-cart-note>
             {% endif %}
+
+                                  <div class="shopify-payment-btn-wrap w100">
+      <div id="shopify_buy_now" style="display:none;">
+                    {{ form | payment_button }}
+                   </div>
+                  <div id="block_buy_now" style="display:none;">
+                      {% render 'gokwik-buy-now' %}
+                      </div>
+    </div>
         </div>
+                                  
     </sp-cart-drawer>
 </sp-drawer>
