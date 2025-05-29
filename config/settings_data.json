@@ -1720,11 +1720,6 @@
         "disabled": false,
         "settings": {}
       },
-      "13672250894428551832": {
-        "type": "shopify://apps/qikify-slide-cart/blocks/app-embed/39da5d6e-3e04-4687-bc69-e23fafb93294",
-        "disabled": false,
-        "settings": {}
-      },
       "15875385031263978153": {
         "type": "shopify://apps/pc-product-options/blocks/pc-embed-customizer/6857ca6c-35eb-4b6f-9d58-a039f31d9406",
         "disabled": false,
@@ -1755,6 +1750,11 @@
           "pc_advanced_custom_js_full": "/*PRODUCT*/\n\n/*PRODUCT*/\n\n\n/*CART*/\n\n/*CART*/",
           "pc_show_image_swatch_preview": false
         }
+      },
+      "13672250894428551832": {
+        "type": "shopify://apps/qikify-slide-cart/blocks/app-embed/39da5d6e-3e04-4687-bc69-e23fafb93294",
+        "disabled": true,
+        "settings": {}
       }
     }
   },
