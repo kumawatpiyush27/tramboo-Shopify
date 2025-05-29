@@ -242,11 +242,7 @@
         }
       });
     </script>
-    {% render 'checkout-customize-popup' %}
-    <!-- Customize Button End -->
-    {%- assign cart_terms_for_id = 'single-page-' | append: section.id -%}
-    {%- render 'cart-terms' with for_id: cart_terms_for_id -%}
-    <div class="gutter-ele-bottom gutter-ele-bottom-tbs"></div>
+   
   {%- endif -%}
 
   {%- if has_compare_btn or has_wishlist_btn -%}
