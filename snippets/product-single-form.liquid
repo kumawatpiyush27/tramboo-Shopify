@@ -164,6 +164,7 @@
             })
             .then(function(res) { return res.json(); })
             .then(function(data) {
+              window.location.href = '/cart';
               if (window.BT && typeof BT.runCartAction === 'function') {
                 BT.runCartAction(data, function(){});
               } else {
@@ -171,11 +172,7 @@
                 var cartDrawerBtn = document.querySelector('.cart-sidebar-trigger');
                 if(cartDrawerBtn) cartDrawerBtn.click();
               }
-              // Success feedback
-              showSuccessMessage('Added to cart successfully!');
-              // Reset and close popup
-              resetPopup();
-              closeCustomizePopup();
+              // No redirect
             })
             .catch(function(err) {
               alert('Could not add to cart. Please try again.');
@@ -186,26 +183,6 @@
           if (engravingInput) engravingInput.value = '';
           if (engravingPreview) engravingPreview.textContent = '';
           if (addToCartBtn) addToCartBtn.style.display = 'none';
-          var noteInput = document.getElementById('custom-note');
-          if (noteInput) noteInput.value = '';
-        }
-        function showSuccessMessage(msg) {
-          var msgDiv = document.createElement('div');
-          msgDiv.textContent = msg;
-          msgDiv.style.background = '#d4edda';
-          msgDiv.style.color = '#155724';
-          msgDiv.style.padding = '8px';
-          msgDiv.style.margin = '10px 0';
-          msgDiv.style.borderRadius = '4px';
-          msgDiv.style.textAlign = 'center';
-          msgDiv.style.fontWeight = 'bold';
-          document.body.appendChild(msgDiv);
-          setTimeout(function(){ msgDiv.remove(); }, 2000);
-        }
-        function closeCustomizePopup() {
-          var modal = document.getElementById('customize-modal');
-          if (modal) modal.style.display = 'none';
-        }
         }
       });
     </script>
@@ -214,7 +191,7 @@
     {%- render 'cart-terms' with for_id: cart_terms_for_id -%}
     <div class="gutter-ele-bottom gutter-ele-bottom-tbs"></div>
   {%- endif -%}
-  
+
   {%- if has_compare_btn or has_wishlist_btn -%}
   <div class="gutter-ele-top gutter-ele-bottom hidden-sm hidden-md hidden-lg">
     {%- if has_compare_btn -%}
@@ -244,4 +221,3 @@
   </div>
   {%- endif -%}
   <input type="hidden" name="id" class="variant-id" value="{{ product.selected_or_first_available_variant.id }}" />
-</div>
