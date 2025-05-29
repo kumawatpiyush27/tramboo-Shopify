@@ -1,0 +1,1163 @@
+{% comment %} Variables  {% endcomment %}
+{% assign settings = section.settings %}
+<style>
+    {% comment %}
+    Render heading & body font family
+{% endcomment %}
+{%- if settings.override_font != blank -%}
+    {%- capture font_settings_list -%}
+        {{ settings.heading_font | font_face: font_display: 'swap' }};;
+        {{ settings.heading_font | font_modify: 'weight', 'bolder' | font_face: font_display: 'swap' }};;
+        {{ settings.heading_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }};;
+        {{ settings.heading_font | font_modify: 'style', 'italic' | font_modify: 'weight', 'bolder' | font_face: font_display: 'swap' }}
+        {{ settings.body_font | font_face: font_display: 'swap' }};;
+        {{ settings.body_font | font_modify: 'weight', 'bolder' | font_face: font_display: 'swap' }};;
+        {{ settings.body_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }};;
+        {{ settings.body_font | font_modify: 'style', 'italic' | font_modify: 'weight', 'bolder' | font_face: font_display: 'swap' }};;
+    {%- endcapture -%}
+    {%- assign font_array = font_settings_list | split: ';;' -%}
+{% endif %}
+{%- if settings.override_font != blank -%}
+    {%- for font in font_array -%}
+        {%- unless font contains 'error' -%}
+            {{ font }}{%- endunless -%}
+    {%- endfor -%}
+    #sp-{{ section.id }} {
+    --sp-heading-font-family: {{ settings.heading_font.family }},{{ settings.heading_font.fallback_families }};
+    --sp-heading-font-weight: {{ settings.heading_font.weight }};
+    --sp-heading-font-style: {{ settings.heading_font.style }};
+    --sp-body-font-family: {{ settings.body_font.family }},{{ settings.body_font.fallback_families }};
+    --sp-body-font-weight: {{ settings.body_font.weight }};
+    --sp-body-font-style: {{ settings.body_font.style }};
+    }
+{% endif %}
+    {% comment %}
+    Render padding section, heading content max width
+{% endcomment %}
+
+    #sp-{{ section.id }} .sp-section {
+    {% if settings.section_top_padding_mobile and  settings.section_bottom_padding_mobile %}
+        --sp-section-top-padding: {{ settings.section_top_padding_mobile | divided_by: 10.0 | round: 0 }}rem;
+        --sp-section-bottom-padding: {{ settings.section_bottom_padding_mobile | divided_by: 10.0 | round: 0 }}rem;
+    {% else %}
+        --sp-section-top-padding: {{ settings.section_top_padding | divided_by: 10.0 | times: 0.5 | round: 0 }}rem;
+        --sp-section-bottom-padding: {{ settings.section_bottom_padding | divided_by: 10.0 | times: 0.5 | round: 0 }}rem;
+    {% endif %}
+        }
+
+    @media (min-width: 768px) {
+        #sp-{{ section.id }} .sp-section {
+            --sp-section-top-padding: {{ settings.section_top_padding | divided_by: 10.0 | times: 0.7 | round: 0 }}rem;
+            --sp-section-bottom-padding: {{ settings.section_bottom_padding | divided_by: 10.0 | times: 0.7 | round: 0 }}rem;
+        }
+    }
+
+    @media (min-width: 1260px) {
+        #sp-{{ section.id }} .sp-section {
+            --sp-section-top-padding: {{ settings.section_top_padding | divided_by: 10.0 | round: 0 }}rem;
+            --sp-section-bottom-padding: {{ settings.section_bottom_padding | divided_by: 10.0 | round: 0 }}rem;
+        }
+    }
+
+
+    #sp-{{ section.id }} {
+        --sp-section-background-color: {{ settings.section_background_color | default: "transparent" }};
+    {% if settings.section_background_gradient_color != blank %} --sp-section-background-color: "transparent";
+    {% endif %} --sp-section-background-gradient-color: {{ settings.section_background_gradient_color | default: "null" }};
+        --sp-section-text-color: {{ settings.section_text_color | default: "transparent" }};
+        --padding-content: 10rem;
+        --sp-container-padding: var(--sp-container-mobile-padding);
+    }
+
+    .sp-section-outer .sp-image-outer {
+        --sp-image-aspect-ratio: {{ settings.image_ratio }};
+    }
+
+    #sp-{{ section.id }} .sp-section {
+        background-color: var(--sp-section-background-color);
+        background-image: var(--sp-section-background-gradient-color);
+    }
+
+    #sp-{{ section.id }} .sp-text-wrapper {
+        --sp-content-max-width: {{ settings.content_max_width }}px;
+        max-width: var(--sp-content-max-width);
+        --sp-item-gap: {{ settings.item_gap }}px;
+    }
+    #sp-{{ section.id }} .sp-faq-content {
+        --faq-content-padding: {{ settings.content_padding }}px;
+        --faq-block-radius: {{ settings.block_radius }}px;
+        --faq-block-border_size: {{ settings.question_block_border_size }}px;
+        --faq-item-gap: {{ settings.question_item_gap }}px;
+        --faq-background-color: {{ settings.question_block_background_color }};
+        --faq-background-gradient-color: {{ settings.question_block_background_gradient_color }};
+        --faq-border-color: {{ settings.question_block_border_color }}
+    }
+    #sp-{{ section.id }} .sp-faq-question-item .sp-icon-item__icon{
+        --icon-size: {{ settings.icon_size_desktop }}px
+    }
+    #sp-{{ section.id }} .sp-faq-question-item .sp-faq-question-heading{
+        --sp-faq-question-text-size: {{ settings.question_font_size_desktop }}px;
+        --sp-faq-question-text-spacing: {{ settings.question_text_spacing }};
+        --sp-faq-question-block-text-color: {{ settings.question_block_text_color }}
+    }
+    #sp-{{ section.id }} .sp-faq-question-item .sp-faq-question-content .sp-inner-content{
+        --sp-faq-answer-text-size: {{ settings.answer_font_size_desktop }}px;
+        --sp-faq-answer-text-spacing: {{ settings.answer_text_spacing }};
+        --sp-faq-answer-block-text-color: {{ settings.answer_block_text_color }}
+    }
+
+    @media (max-width: 767px) {
+        #sp-{{ section.id }} .sp-text-wrapper {
+            --sp-item-gap: {{ settings.item_gap_mobile }}px;
+        }
+        #sp-{{ section.id }} .sp-faq-content {
+            --faq-item-gap: {{ settings.question_item_gap_mobile }}px;
+        }
+        #sp-{{ section.id }} .sp-faq-question-item .sp-faq-question-heading{
+            --sp-faq-question-text-size: {{ settings.question_font_size_mobile }}px;
+        }
+        #sp-{{ section.id }} .sp-faq-question-item .sp-faq-question-content .sp-inner-content {
+            --sp-faq-answer-text-size: {{ settings.answer_font_size_mobile }}px;
+        }
+        #sp-{{ section.id }} .sp-faq-question-item .sp-icon-item__icon{
+            --icon-size: {{ settings.icon_size_mobile }}px
+        }
+    }
+    @media (min-width: 768px) {
+        #sp-{{ section.id }}  {
+            --sp-container-padding: var(--sp-container-tablet-padding)
+        }
+    }
+    @media (min-width: 1200px) {
+        #sp-{{ section.id }} {
+            --sp-container-padding: var(--sp-container-desktop-padding)
+        }
+    }
+    
+    @media(max-width:1440px) {
+        #sp-{{ section.id }} {
+            --padding-content: 4rem;
+        }
+    }
+    @media(max-width:767px) {
+        #sp-{{ section.id }} {
+            --padding-content: var(--sp-container-padding);
+        }
+    }
+
+</style>
+<div id="sp-{{ section.id }}" class="sp-{{ section.id }} sp-section-image-with-text-4" data-section="image-with-text-4"
+     data-variant="variant-6" data-image-position="{{ settings.image_position }}">
+    <div class="sp-image-ob" data-image-hover="{{ settings.image_hover }}" data-lazy="sp-{% if settings.lazy_load %}lazy-section{% endif %}">
+        {%- if settings.section_image != blank -%}
+            {{ settings.section_image | image_url: width: 1920 | image_tag: class: 'sp-image' }}
+        {% else %}
+            {{ 'image' | placeholder_svg_tag: 'sp-placeholder-image-gray-100' }}
+        {% endif %}
+    </div> 
+    <div class="sp-section-outer">
+        <div class="sp-section" data-border="{{ settings.section_border }}">
+            <div class="sp-container-fluid sp-container-no-gap">
+                <div class="sp-section-inner {{ settings.image_position }}" data-lazy="sp-{% if settings.lazy_load %}lazy-section{% endif %}"
+                     data-cascade>
+                     <div class="sp-image-outer" data-image-hover="{{ settings.image_hover }}">
+                        {%- if settings.section_image != blank -%}
+                            {{ settings.section_image | image_url: width: 1920 | image_tag: class: 'sp-image' }}
+                        {% else %}
+                            {{ 'image' | placeholder_svg_tag: 'sp-placeholder-image-gray-100' }}
+                        {% endif %}
+                    </div> 
+                    <div class="sp-text-outer" data-content-position="{{ settings.content_position }}"
+                         data-item-alignment="{{ settings.item_alignment }}"
+                         data-item-alignment-mobile="{{ settings.item_alignment_mobile }}"
+                    >
+                        <div class="sp-text-wrapper">
+                            {% assign heading_block = section.blocks | where: 'type', 'heading_item' %}
+                            {% for block in heading_block %}
+                                {% assign setting = block.settings %}
+                                {% if setting.heading != empty or setting.description != empty or setting.subheading != empty %}
+                                    <div id="sp-{{ block.id }}"
+                                         class="sp-heading-item" {{ block.shopify_attributes }}>
+                                        <style>
+                                            #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item {
+                                                --sp-text-gap: {{ setting.text_gap }}px;
+                                                --sp-heading-text-color: {{ setting.heading_text_color }};
+                                                --sp-description-text-color: {{ setting.description_text_color }};
+                                                --sp-subheading-text-color: {{ setting.subheading_text_color }};
+                                            }
+                                            #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item .sp-subheading {
+                                                --sp-text-size: {{ setting.subheading_size_desktop }}px;
+                                                --sp-text-letter-spacing: {{ setting.text_subheading_spacing }}px;
+                                                
+                                            }
+
+                                            #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item .sp-heading {
+                                                --sp-text-size: {{ setting.heading_size_desktop }}px;
+                                                --sp-text-letter-spacing: {{ setting.text_heading_spacing }}px;
+                                                
+                                            }
+
+                                            #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item .sp-description {
+                                                --sp-text-size: {{ setting.description_size_desktop }}px;
+                                                --sp-text-letter-spacing: {{ setting.text_description_spacing }}px;
+                                                
+                                            }
+
+                                            @media(max-width:1199px) {
+                                                #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item .sp-heading { 
+                                                    {% if setting.heading_size_desktop > 32 %}
+                                                        --sp-text-size: 32px;
+                                                     {%  endif %}
+                                                }
+                                            }
+
+                                            @media (max-width: 767px) {
+                                                #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item {
+                                                    --sp-text-gap: {{ setting.text_gap_mobile }}px;
+                                                }
+                                                #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item .sp-subheading {
+                                                    --sp-text-size: {{ setting.subheading_size_mobile }}px;
+                                                    
+                                                }
+
+                                                #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item .sp-heading {
+                                                    --sp-text-size: {{ setting.heading_size_mobile }}px;
+                                                }
+
+                                                #sp-{{ section.id }} .sp-text-wrapper .sp-heading-item .sp-description {
+                                                    --sp-text-size: {{ setting.description_size_mobile }}px;
+                                                }
+                                            }
+                                        </style>
+                                        {% if setting.subheading != empty %}
+                                            <div class="sp-subheading"
+                                                 data-text-style="{{ setting.subheading_text_style }}">{{ setting.subheading }}</div>
+                                        {% endif %}
+                                        {% if setting.heading != empty %}
+                                            <div class="sp-heading"
+                                                 data-text-style="{{ setting.heading_text_style }}">{{ setting.heading }}</div>
+                                        {% endif %}
+                                        {% if setting.description != empty %}
+                                            <div class="sp-description"
+                                                 data-text-style="{{ setting.description_text_style }}">{{ setting.description }}</div>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {%  endfor %}    
+                            
+                            {% assign index = -1 %}
+                            {% assign faq_blocks = section.blocks | where: 'type', 'faq_item' %}
+                            <div class="sp-faq-content">
+                                {% for block in faq_blocks %}
+                                    {% assign setting = block.settings %}
+                                    {% if setting.question != empty %}
+                                        <div id="sp-{{ block.id }}"
+                                            class="sp-faq-item sp-faq-question-item {% if index == -1 %}is-selected{% endif %}" {{ block.shopify_attributes }}>
+                                            <div class="sp-faq-question-heading">
+                                                <div class="sp-faq-question-heading__icon">
+                                                    {% if setting.icon != null %}
+                                                        <div class="sp-icon-item__icon">
+                                                            {{ setting.icon | image_url: width: 512 | image_tag: class: 'sp-image' }}
+                                                        </div>
+                                                    {% endif %}
+                                                    <span class="sp-faq-question-heading-text sp-heading" data-text-style="{{ settings.question_text_style }}" onclick="spFaqToggleHandle(this)">{{ setting.question }}</span>
+                                                </div>
+                                                
+                                                <div class="sp-control-group">
+                                                    <a href="#." class="sp-icon-minus" onclick="spFaqToggleHandle(this)">
+                                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="19" y="11.5" width="2" height="14" rx="1"
+                                                                transform="rotate(90 19 11.5)" fill="currentColor"/>
+                                                        </svg>
+                                                    </a>
+                                                    <a href="#." class="sp-icon-plus" onclick="spFaqToggleHandle(this)">
+                                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="11" y="5.5" width="2" height="14" rx="1"
+                                                                fill="currentColor"/>
+                                                            <rect x="19" y="11.5" width="2" height="14" rx="1"
+                                                                transform="rotate(90 19 11.5)" fill="currentColor"/>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="sp-faq-question-content">
+                                                <div class="sp-inner-content sp-description" data-text-style="{{ settings.answer_text_style }}">{{ setting.answer }}</div>
+                                            </div>
+                                        </div>
+                                        {% assign index = 1 %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+	"name": "🧩 Image With Text 4.6",
+	"tag": "section",
+	"class": "sp-image-with-text-4",
+	"settings": [
+		{
+			"type": "header",
+			"content": "Section settings"
+		},
+		{
+			"type": "image_picker",
+			"id": "section_image",
+			"label": "Image"
+		},
+		{
+			"type": "range",
+			"id": "content_max_width",
+			"min": 300,
+			"max": 1200,
+			"step": 10,
+			"unit": "px",
+			"label": "Content max-width",
+			"default": 760
+		},
+		{
+			"type": "select",
+			"id": "content_position",
+			"label": "Content position",
+			"options": [
+				{
+					"label": "Left",
+					"value": "left"
+				},
+				{
+					"label": "Center",
+					"value": "center"
+				},
+				{
+					"label": "Right",
+					"value": "right"
+				}
+			],
+			"default": "left"
+		},
+		{
+			"type": "select",
+			"id": "item_alignment",
+			"label": "Item alignment (Desktop)",
+			"options": [
+				{
+					"label": "Left",
+					"value": "left"
+				},
+				{
+					"label": "Center",
+					"value": "center"
+				},
+				{
+					"label": "Right",
+					"value": "right"
+				}
+			],
+			"default": "left"
+		},
+		{
+			"type": "select",
+			"id": "item_alignment_mobile",
+			"label": "Item alignment (Mobile)",
+			"options": [
+				{
+					"label": "Left",
+					"value": "left"
+				},
+				{
+					"label": "Center",
+					"value": "center"
+				},
+				{
+					"label": "Right",
+					"value": "right"
+				}
+			],
+			"default": "left"
+		},
+		{
+			"type": "range",
+			"id": "item_gap",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Items gap (Desktop)",
+			"default": 50
+		},
+		{
+			"type": "range",
+			"id": "item_gap_mobile",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Items gap (Mobile)",
+			"default": 30
+		},
+		{
+			"type": "header",
+			"content": "FAQ items settings"
+		},
+		{
+			"type": "range",
+			"id": "content_padding",
+			"min": 1,
+			"max": 50,
+			"step": 1,
+			"unit": "px",
+			"label": "Content padding",
+			"default": 16
+		},
+		{
+			"type": "range",
+			"id": "block_radius",
+			"min": 0,
+			"max": 60,
+			"step": 1,
+			"unit": "px",
+			"label": "Border radius",
+			"default": 8
+		},
+		{
+			"type": "range",
+			"id": "question_block_border_size",
+			"min": 0,
+			"max": 5,
+			"step": 0.5,
+			"unit": "px",
+			"label": "Border size",
+			"default": 1
+		},
+		{
+			"type": "range",
+			"id": "question_item_gap",
+			"min": 0,
+			"max": 50,
+			"step": 1,
+			"unit": "px",
+			"label": "Item gap",
+			"default": 16
+		},
+		{
+			"type": "range",
+			"id": "question_item_gap_mobile",
+			"min": 0,
+			"max": 50,
+			"step": 1,
+			"unit": "px",
+			"label": "Item gap",
+			"default": 16
+		},
+		{
+			"type": "range",
+			"id": "icon_size_desktop",
+			"min": 10,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Icon size (Desktop)",
+			"default": 48
+		},
+		{
+			"type": "range",
+			"id": "icon_size_mobile",
+			"min": 10,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Icon size (Mobile)",
+			"default": 48
+		},
+		{
+			"type": "range",
+			"id": "question_font_size_desktop",
+			"min": 12,
+			"max": 36,
+			"step": 1,
+			"unit": "px",
+			"label": "Question size (desktop)",
+			"default": 18
+		},
+		{
+			"type": "range",
+			"id": "question_font_size_mobile",
+			"min": 12,
+			"max": 36,
+			"step": 1,
+			"unit": "px",
+			"label": "Question size (mobile)",
+			"default": 16
+		},
+		{
+			"type": "range",
+			"id": "question_text_spacing",
+			"min": -10,
+			"max": 10,
+			"step": 0.2,
+			"unit": "px",
+			"label": "Text question letter spacing",
+			"default": 0
+		},
+		{
+			"type": "select",
+			"id": "question_text_style",
+			"label": "Question style",
+			"options": [
+				{
+					"label": "Normal",
+					"value": "normal"
+				},
+				{
+					"label": "Capitalize",
+					"value": "capitalize"
+				},
+				{
+					"label": "Uppercase",
+					"value": "uppercase"
+				},
+				{
+					"label": "Lowercase",
+					"value": "lowercase"
+				}
+			],
+			"default": "uppercase"
+		},
+		{
+			"type": "range",
+			"id": "answer_font_size_desktop",
+			"min": 12,
+			"max": 32,
+			"step": 1,
+			"unit": "px",
+			"label": "Answer size (desktop)",
+			"default": 16
+		},
+		{
+			"type": "range",
+			"id": "answer_font_size_mobile",
+			"min": 12,
+			"max": 32,
+			"step": 1,
+			"unit": "px",
+			"label": "Answer size (mobile)",
+			"default": 14
+		},
+		{
+			"type": "range",
+			"id": "answer_text_spacing",
+			"min": -10,
+			"max": 10,
+			"step": 0.2,
+			"unit": "px",
+			"label": "Text answer letter spacing",
+			"default": 0
+		},
+		{
+			"type": "select",
+			"id": "answer_text_style",
+			"label": "Answer style",
+			"options": [
+				{
+					"label": "Normal",
+					"value": "normal"
+				},
+				{
+					"label": "Capitalize",
+					"value": "capitalize"
+				},
+				{
+					"label": "Uppercase",
+					"value": "uppercase"
+				},
+				{
+					"label": "Lowercase",
+					"value": "lowercase"
+				}
+			],
+			"default": "normal"
+		},
+		{
+			"type": "header",
+			"content": "Effects"
+		},
+		{
+			"type": "checkbox",
+			"id": "lazy_load",
+			"label": "Lazy load",
+			"default": true
+		},
+		{
+			"type": "select",
+			"id": "button_hover",
+			"label": "Button hover",
+			"options": [
+				{
+					"label": "None",
+					"value": "none"
+				},
+				{
+					"label": "Fly",
+					"value": "fly"
+				},
+				{
+					"label": "Opacity",
+					"value": "opacity"
+				}
+			],
+			"default": "fly"
+		},
+		{
+			"type": "select",
+			"id": "image_hover",
+			"label": "Image hover",
+			"options": [
+				{
+					"label": "None",
+					"value": "sp-image-hover-none"
+				},
+				{
+					"label": "Zoom in",
+					"value": "sp-image-hover-zoom-in"
+				}
+			],
+			"default": "sp-image-hover-none"
+		},
+		{
+			"type": "header",
+			"content": "Image settings"
+		},
+		{
+			"type": "select",
+			"id": "image_position",
+			"label": "Image position",
+			"options": [
+				{
+					"label": "Left",
+					"value": "sp-image-position-left"
+				},
+				{
+					"label": "Right",
+					"value": "sp-image-position-right"
+				}
+			],
+			"default": "sp-image-position-left"
+		},
+		{
+			"type": "range",
+			"id": "image_ratio",
+			"min": 0.3,
+			"max": 2,
+			"step": 0.1,
+			"default": 0.9,
+			"unit": ":1",
+			"label": "Image ratio"
+		},
+		{
+			"type": "header",
+			"content": "Section padding"
+		},
+		{
+			"type": "range",
+			"id": "section_top_padding",
+			"min": 0,
+			"max": 150,
+			"step": 10,
+			"unit": "px",
+			"label": "Top padding (Desktop)",
+			"default": 100
+		},
+		{
+			"type": "range",
+			"id": "section_bottom_padding",
+			"min": 0,
+			"max": 150,
+			"step": 10,
+			"unit": "px",
+			"label": "Bottom padding (Desktop)",
+			"default": 100
+		},
+		{
+			"type": "range",
+			"id": "section_top_padding_mobile",
+			"min": 0,
+			"max": 150,
+			"step": 10,
+			"unit": "px",
+			"label": "Top padding (Mobile)",
+			"default": 50
+		},
+		{
+			"type": "range",
+			"id": "section_bottom_padding_mobile",
+			"min": 0,
+			"max": 150,
+			"step": 10,
+			"unit": "px",
+			"label": "Bottom padding (Mobile)",
+			"default": 50
+		},
+		{
+			"type": "checkbox",
+			"id": "section_border",
+			"label": "Separate section with border",
+			"default": false
+		},
+		{
+			"type": "header",
+			"content": "Section color"
+		},
+		{
+			"type": "color",
+			"id": "section_background_color",
+			"label": "Background color",
+			"default": "#ffffff"
+		},
+		{
+			"type": "color_background",
+			"id": "section_background_gradient_color",
+			"label": "Background gradient color"
+		},
+		{
+			"type": "header",
+			"content": "FAQ items color"
+		},
+		{
+			"type": "color",
+			"id": "question_block_background_color",
+			"label": "Background",
+			"default": "#fff"
+		},
+		{
+			"type": "color_background",
+			"id": "question_block_background_gradient_color",
+			"label": "Background gradient",
+			"info": "Background gradient replaces background where possible."
+		},
+		{
+			"type": "color",
+			"id": "question_block_text_color",
+			"label": "Question text",
+			"default": "#1e1e1e"
+		},
+		{
+			"type": "color",
+			"id": "answer_block_text_color",
+			"label": "Answer text",
+			"default": "#1e1e1e"
+		},
+		{
+			"type": "color",
+			"id": "question_block_border_color",
+			"label": "Border",
+			"default": "#a9a9a9"
+		},
+		{
+			"type": "header",
+			"content": "Typography"
+		},
+		{
+			"type": "checkbox",
+			"id": "override_font",
+			"label": "Override fonts of the theme",
+			"default": true,
+			"info": "If you check this option, the fonts of the section will work"
+		},
+		{
+			"type": "font_picker",
+			"id": "heading_font",
+			"label": "Heading font",
+			"default": "futura_n4"
+		},
+		{
+			"type": "font_picker",
+			"id": "body_font",
+			"label": "Body font",
+			"default": "roboto_n4"
+		}
+	],
+	"blocks": [
+		{
+			"name": "Heading",
+			"type": "heading_item",
+			"limit": 1,
+			"settings": [
+				{
+					"type": "inline_richtext",
+					"id": "subheading",
+					"label": "Sub-heading",
+					"default": "FEATURES PRODUCT"
+				},
+				{
+					"type": "richtext",
+					"id": "heading",
+					"label": "Heading",
+					"default": "<p>Any Questions?</p>"
+				},
+				{
+					"type": "richtext",
+					"id": "description",
+					"label": "Description",
+					"default": "<p></p>"
+				},
+				{
+					"type": "range",
+					"id": "text_gap",
+					"min": 0,
+					"max": 50,
+					"step": 1,
+					"unit": "px",
+					"label": "Text gap (Desktop)",
+					"info": "Space between heading and description",
+					"default": 20
+				},
+				{
+					"type": "range",
+					"id": "text_gap_mobile",
+					"min": 0,
+					"max": 50,
+					"step": 1,
+					"unit": "px",
+					"label": "Text gap (Mobile)",
+					"info": "Space between heading and description",
+					"default": 20
+				},
+				{
+					"type": "header",
+					"content": "Heading Styling"
+				},
+				{
+					"type": "range",
+					"id": "heading_size_desktop",
+					"min": 18,
+					"max": 86,
+					"step": 1,
+					"unit": "px",
+					"label": "Heading size (Desktop)",
+					"default": 64
+				},
+				{
+					"type": "range",
+					"id": "heading_size_mobile",
+					"min": 18,
+					"max": 86,
+					"step": 1,
+					"unit": "px",
+					"label": "Heading size (Mobile)",
+					"default": 36
+				},
+				{
+					"type": "range",
+					"id": "text_heading_spacing",
+					"min": -10,
+					"max": 10,
+					"step": 0.2,
+					"unit": "px",
+					"label": "Text heading letter spacing",
+					"default": 0
+				},
+				{
+					"type": "select",
+					"id": "heading_text_style",
+					"label": "Text style",
+					"options": [
+						{
+							"label": "Normal",
+							"value": "normal"
+						},
+						{
+							"label": "Capitalize",
+							"value": "capitalize"
+						},
+						{
+							"label": "Uppercase",
+							"value": "uppercase"
+						},
+						{
+							"label": "Lowercase",
+							"value": "lowercase"
+						}
+					],
+					"default": "normal"
+				},
+				{
+					"type": "header",
+					"content": "Description Styling"
+				},
+				{
+					"type": "range",
+					"id": "description_size_desktop",
+					"min": 12,
+					"max": 32,
+					"step": 1,
+					"unit": "px",
+					"label": "Description size (Desktop)",
+					"default": 18
+				},
+				{
+					"type": "range",
+					"id": "description_size_mobile",
+					"min": 12,
+					"max": 32,
+					"step": 1,
+					"unit": "px",
+					"label": "Description size (Mobile)",
+					"default": 16
+				},
+				{
+					"type": "range",
+					"id": "text_description_spacing",
+					"min": -10,
+					"max": 10,
+					"step": 0.2,
+					"unit": "px",
+					"label": "Text description letter spacing",
+					"default": 0
+				},
+				{
+					"type": "select",
+					"id": "description_text_style",
+					"label": "Text style",
+					"options": [
+						{
+							"label": "Normal",
+							"value": "normal"
+						},
+						{
+							"label": "Capitalize",
+							"value": "capitalize"
+						},
+						{
+							"label": "Uppercase",
+							"value": "uppercase"
+						},
+						{
+							"label": "Lowercase",
+							"value": "lowercase"
+						}
+					],
+					"default": "normal"
+				},
+				{
+					"type": "header",
+					"content": "Sub-heading Styling"
+				},
+				{
+					"type": "range",
+					"id": "subheading_size_desktop",
+					"min": 8,
+					"max": 28,
+					"step": 1,
+					"unit": "px",
+					"label": "Sub-heading size (Desktop)",
+					"default": 16
+				},
+				{
+					"type": "range",
+					"id": "subheading_size_mobile",
+					"min": 8,
+					"max": 28,
+					"step": 1,
+					"unit": "px",
+					"label": "Sub-heading size (Mobile)",
+					"default": 16
+				},
+				{
+					"type": "range",
+					"id": "text_subheading_spacing",
+					"min": -10,
+					"max": 10,
+					"step": 0.2,
+					"unit": "px",
+					"label": "Sub-heading letter spacing",
+					"default": 0
+				},
+				{
+					"type": "select",
+					"id": "subheading_text_style",
+					"label": "Text style",
+					"options": [
+						{
+							"label": "Normal",
+							"value": "normal"
+						},
+						{
+							"label": "Capitalize",
+							"value": "capitalize"
+						},
+						{
+							"label": "Uppercase",
+							"value": "uppercase"
+						},
+						{
+							"label": "Lowercase",
+							"value": "lowercase"
+						}
+					],
+					"default": "uppercase"
+				},
+				{
+					"type": "header",
+					"content": "Color settings"
+				},
+				{
+					"type": "color",
+					"id": "subheading_text_color",
+					"label": "Sub-heading text color",
+					"default": "#222222"
+				},
+				{
+					"type": "color",
+					"id": "heading_text_color",
+					"label": "Heading text color",
+					"default": "#222222"
+				},
+				{
+					"type": "color",
+					"id": "description_text_color",
+					"label": "Description text color",
+					"default": "#222222"
+				}
+			]
+		},
+		{
+			"name": "FAQ item",
+			"type": "faq_item",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "icon",
+					"label": "Icon"
+				},
+				{
+					"type": "inline_richtext",
+					"id": "question",
+					"label": "Question",
+					"default": "I'M LOOKING FOR MY INVOICE. WHERE TO FIND IT?"
+				},
+				{
+					"type": "richtext",
+					"id": "answer",
+					"label": "Answer",
+					"default": "<p>A thoughtfully designed dustpan with ambidextrous foot plates to eliminate the awkward bend and sweep dance. The dustpan features a comfortable handle and deep cavity to keep dirt contained en route to the garbage</p>"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "🧩 Image With Text 4.6",
+			"settings": {
+				"section_image": "shopify://shop_images/image-with-text-4-variant-6-image-1.jpg",
+				"content_max_width": 760,
+				"content_position": "left",
+				"item_alignment": "left",
+				"item_alignment_mobile": "left",
+				"item_gap": 50,
+				"item_gap_mobile": 30,
+				"content_padding": 16,
+				"block_radius": 8,
+				"question_block_border_size": 1,
+				"question_item_gap": 16,
+				"question_item_gap_mobile": 16,
+				"icon_size_desktop": 48,
+				"icon_size_mobile": 48,
+				"question_font_size_desktop": 18,
+				"question_font_size_mobile": 16,
+				"question_text_spacing": 0,
+				"question_text_style": "uppercase",
+				"answer_font_size_desktop": 16,
+				"answer_font_size_mobile": 14,
+				"answer_text_spacing": 0,
+				"answer_text_style": "normal",
+				"lazy_load": true,
+				"button_hover": "fly",
+				"image_hover": "sp-image-hover-none",
+				"image_position": "sp-image-position-left",
+				"image_ratio": 0.9,
+				"section_top_padding": 100,
+				"section_bottom_padding": 100,
+				"section_top_padding_mobile": 50,
+				"section_bottom_padding_mobile": 50,
+				"section_border": false,
+				"section_background_color": "#ffffff",
+				"section_background_gradient_color": "",
+				"question_block_background_color": "#fff",
+				"question_block_background_gradient_color": "",
+				"question_block_text_color": "#1e1e1e",
+				"answer_block_text_color": "#1e1e1e",
+				"question_block_border_color": "#a9a9a9",
+				"override_font": true,
+				"heading_font": "futura_n4",
+				"body_font": "roboto_n4"
+			},
+			"blocks": [
+				{
+					"type": "heading_item",
+					"settings": {
+						"subheading": "FEATURES PRODUCT",
+						"heading": "<p>Any Questions?</p>",
+						"description": "",
+						"text_gap": 20,
+						"text_gap_mobile": 20,
+						"heading_size_desktop": 64,
+						"heading_size_mobile": 36,
+						"text_heading_spacing": 0,
+						"heading_text_style": "normal",
+						"description_size_desktop": 18,
+						"description_size_mobile": 16,
+						"text_description_spacing": 0,
+						"description_text_style": "normal",
+						"subheading_size_desktop": 16,
+						"subheading_size_mobile": 16,
+						"text_subheading_spacing": 0,
+						"subheading_text_style": "uppercase",
+						"subheading_text_color": "#222222",
+						"heading_text_color": "#222222",
+						"description_text_color": "#222222"
+					}
+				},
+				{
+					"type": "faq_item",
+					"settings": {
+						"question": "CAN MY ORDER BE DELIVERED AT A PACKSTATION?",
+						"answer": "<p>A thoughtfully designed dustpan with ambidextrous foot plates to eliminate the awkward bend and sweep dance. The dustpan features a comfortable handle and deep cavity to keep dirt contained en route to the garbage</p>"
+					}
+				},
+				{
+					"type": "faq_item",
+					"settings": {
+						"question": "DO I HAVE TO PAY FOR THE RETURN COSTS?",
+						"answer": "<p>A thoughtfully designed dustpan with ambidextrous foot plates to eliminate the awkward bend and sweep dance. The dustpan features a comfortable handle and deep cavity to keep dirt contained en route to the garbage</p>"
+					}
+				},
+				{
+					"type": "faq_item",
+					"settings": {
+						"question": "WHEN WILL I RECEIVE MY REFUND?",
+						"answer": "<p>A thoughtfully designed dustpan with ambidextrous foot plates to eliminate the awkward bend and sweep dance. The dustpan features a comfortable handle and deep cavity to keep dirt contained en route to the garbage</p>"
+					}
+				},
+				{
+					"type": "faq_item",
+					"settings": {
+						"question": "I'M LOOKING FOR MY INVOICE. WHERE TO FIND IT?",
+						"answer": "<p>A thoughtfully designed dustpan with ambidextrous foot plates to eliminate the awkward bend and sweep dance. The dustpan features a comfortable handle and deep cavity to keep dirt contained en route to the garbage</p>"
+					}
+				}
+			]
+		}
+	]
+}
+{% endschema %}
+
+{% style %}
+	#sp-{{section.id}}{position:relative}#sp-{{section.id}} .sp-section{background-color:var(--sp-section-background-color);background-image:var(--sp-section-background-gradient-color);padding-top:0;padding-bottom:0}#sp-{{section.id}} [data-icon-box-alignment=center] .sp-icon-box-item{justify-content:center}#sp-{{section.id}} [data-icon-box-alignment=center] .sp-icon-box-item .sp-description *{text-align:center}#sp-{{section.id}} [data-icon-box-alignment=right] .sp-icon-box-item{justify-content:flex-end}#sp-{{section.id}} [data-icon-box-alignment=right] .sp-icon-box-item .sp-description *{text-align:right}#sp-{{section.id}} .sp-text-wrapper{row-gap:var(--sp-item-gap);padding-top:var(--sp-section-top-padding);padding-bottom:var(--sp-section-bottom-padding)}#sp-{{section.id}} .sp-text-wrapper .sp-heading-item .sp-heading+div{margin-top:var(--sp-text-gap)}#sp-{{section.id}} .sp-text-wrapper .sp-heading-item .sp-subheading{color:var(--sp-subheading-text-color);font-size:var(--sp-text-size);letter-spacing:var(--sp-text-letter-spacing);font-weight:var(--sp-body-font-weight);line-height:var(--sp-description-line-height);font-family:var(--sp-body-font-family)}#sp-{{section.id}} .sp-text-wrapper .sp-heading-item .sp-heading *{color:var(--sp-heading-text-color);font-size:var(--sp-text-size);letter-spacing:var(--sp-text-letter-spacing)}#sp-{{section.id}} .sp-text-wrapper .sp-heading-item .sp-description *{color:var(--sp-description-text-color);font-size:var(--sp-text-size);letter-spacing:var(--sp-text-letter-spacing);opacity:.8}#sp-{{section.id}} .sp-faq-content .sp-faq-question-item .sp-faq-question-heading .sp-heading{color:var(--sp-faq-question-block-text-color);font-size:var(--sp-faq-question-text-size);letter-spacing:var(--sp-faq-question-text-spacing)}#sp-{{section.id}} .sp-faq-content .sp-faq-question-item .sp-faq-question-content .sp-description *{color:var(--sp-faq-answer-block-text-color);font-size:var(--sp-faq-answer-text-size);letter-spacing:var(--sp-faq-answer-text-spacing);opacity:.8}#sp-{{section.id}} .sp-faq-content .sp-faq-question-item .sp-control-group [class*=sp-icon-]{color:var(--sp-faq-question-block-text-color)}
+{% endstyle %}
