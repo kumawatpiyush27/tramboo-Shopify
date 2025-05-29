@@ -8,7 +8,8 @@
 {%- endif -%}
 <div class="w100" {{ block.shopify_attributes }}>
   {%- render 'product-single-customizable-fields' -%}
-  <div class="product-form__item product-form__item--quantity{% if align_center_button %} center-block text-center{% endif %} gutter-ele-top gutter-ele-bottom flex">
+  <form method="post" action="/cart/add" id="product-form-main" accept-charset="UTF-8" class="product-form__main">
+    <div class="product-form__item product-form__item--quantity{% if align_center_button %} center-block text-center{% endif %} gutter-ele-top gutter-ele-bottom flex">
     {%- if block.settings.show_quantity_selector -%}
     <div class="qty-box qty-box--single flex flex-align-ver flex-align-space-between{% if full_qty_box %} qty-box--single-full{% endif %}">
       <a href="#" class="qty-box__ctrl qty-box__ctrl--descrease flex flex-align-hoz flex-align-ver" aria-label="button">
@@ -44,6 +45,7 @@
       </a>
     {%- endif -%}
   </div>
+  </form>
   {%- if template.suffix != 'quick_view' and template.suffix != 'select_option' -%}
     {% if block.settings.show_dynamic_checkout %}
     <div class="shopify-payment-btn-wrap w100">
