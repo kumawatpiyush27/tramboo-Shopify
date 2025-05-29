@@ -208,40 +208,7 @@
           engravingInput.addEventListener('input', updatePreview);
         }
         // Buy Now button action
-        if (buyNowBtn) {
-          buyNowBtn.addEventListener('click', function() {
-            var name = engravingInput.value;
-            if (!isValidName(name)) {
-              engravingInput.focus();
-              return;
-            }
-            // Add personalized product with engraving, then go to checkout
-            fetch('/cart/add.js', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                id: {{ current_variant.id }},
-                quantity: 1,
-                properties: { 'Engraving Name': name, 'Personalization Charge': '+₹50' }
-              })
-            })
-            .then(function(res) { return res.json(); })
-            .then(function() {
-              window.location.href = '/checkout';
-            });
-          });
-        }
-        // Update price
-        if (customizationPrice) {
-          customizationPrice.textContent = basePrice + customCharge;
-        }
-        function resetPopup() {
-          if (engravingInput) engravingInput.value = '';
-          if (engravingPreview) engravingPreview.textContent = '';
-          if (buyNowBtn) buyNowBtn.style.display = 'none';
-        }
-      });
-    </script>
+       
    
   {%- endif -%}
 
