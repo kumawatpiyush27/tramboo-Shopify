@@ -199,16 +199,8 @@
             })
             .then(function(res) { return res.json(); })
             .then(function(data) {
-              // Open cart drawer
-              if (window.BT && typeof BT.runCartAction === 'function') {
-                BT.runCartAction(data, function(){});
-              } else {
-                var cartDrawerBtn = document.querySelector('.cart-sidebar-trigger');
-                if(cartDrawerBtn) cartDrawerBtn.click();
-              }
-              // Show custom checkout popup
-              setTimeout(function() { showCheckoutCustomizePopup(); }, 400);
-              window.__JUST_ADDED_VARIANT_ID = {{ current_variant.id }};
+              // Redirect to Shopify native checkout after add to cart
+              window.location.href = '/checkout';
             })
             .catch(function(err) {
               alert('Could not add to cart. Please try again.');
