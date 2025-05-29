@@ -54,84 +54,13 @@
                       {% render 'gokwik-buy-now' %}
                       </div>
     </div>
-    {% endif %} 
+    {% endif %}
   {%- endif -%}
   {%- if template.suffix != 'quick_view' and template.suffix != 'select_option' -%}
     <!-- Customize Button Start -->
-    <div class="customize-card">
-      <div class="customize-card__info">
-        <div class="customize-card__title">Make Your Product Personalised</div>
-        <div class="customize-card__desc">Get A Customized Engraving And Make It Unmistakably Yours.</div>
-        <button id="customize-product-btn" type="button" class="customize-card__btn">
-          <span>Customize</span>
-        </button>
-      </div>
-      <div class="customize-card__icon">
-        <!-- Simple Engraving Icon SVG -->
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="8" y="8" width="24" height="24" rx="6" stroke="#222" stroke-width="2" fill="none"/>
-          <rect x="16" y="24" width="8" height="2" rx="1" fill="#222"/>
-          <path d="M28 16l-6 6" stroke="#222" stroke-width="2" stroke-linecap="round"/>
-          <rect x="25.5" y="13.5" width="5" height="2" rx="1" transform="rotate(45 25.5 13.5)" fill="#222"/>
-        </svg>
-      </div>
-    </div>
-    <style>
-      .customize-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #f7f8fa;
-        border-radius: 12px;
-        padding: 24px 28px;
-        margin: 18px 0 0 0;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-      }
-      .customize-card__info {
-        flex: 1;
-      }
-      .customize-card__title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        margin-bottom: 6px;
-        color: #111;
-      }
-      .customize-card__desc {
-        color: #2264d1;
-        font-size: 1rem;
-        margin-bottom: 14px;
-      }
-      .customize-card__btn {
-        background: #1e90ff;
-        color: #fff;
-        padding: 10px 28px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: background 0.2s;
-      }
-      .customize-card__btn:hover {
-        background: #156fcc;
-      }
-      .customize-card__icon {
-        margin-left: 28px;
-        display: flex;
-        align-items: center;
-      }
-      @media (max-width: 600px) {
-        .customize-card {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 16px;
-        }
-        .customize-card__icon {
-          margin-left: 0;
-          margin-top: 16px;
-        }
-      }
-    </style>
+    <div class="customize-btn-wrap w100" style="margin-top: 16px; text-align: center;">
+      <button id="customize-product-btn" type="button" class="button button--rad button--customize" style="background:#1e90ff;color:#fff;padding:12px 32px;font-size:16px;border:none;border-radius:4px;cursor:pointer;">
+        <span>Customize</span>
       </button>
     </div>
     <!-- Customize Modal Popup -->
@@ -149,12 +78,171 @@
         <form id="customize-form" style="margin-top:16px;">
           <input type="text" id="engraving-name" name="properties[Engraving Name]" maxlength="12" autocomplete="off" placeholder="Your Engraving Name" style="width:100%;padding:12px 10px;font-size:16px;border-radius:6px;border:1px solid #ccc;text-align:center;margin-bottom:6px;">
           <div style="color:#888;font-size:12px;margin-bottom:10px;">Limit text to alphabets, numbers, no emojis or special characters. Max 12 characters allowed.</div>
+          <button id="add-to-cart-custom" type="submit" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Add to Cart (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 50 }}</span>)</button>
         </form>
         <a href="#" id="skip-customization" style="display:block;color:#1e90ff;font-size:14px;text-decoration:underline;margin-top:8px;">Skip Personalization</a>
       </div>
     </div>
-   
-   
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var customizeBtn = document.getElementById('customize-product-btn');
+        var modal = document.getElementById('customize-modal');
+        var closeBtn = document.getElementById('close-customize-modal');
+        var engravingInput = document.getElementById('engraving-name');
+        var engravingPreview = document.getElementById('engraving-preview');
+        var addToCartBtn = document.getElementById('add-to-cart-custom');
+        var skipBtn = document.getElementById('skip-customization');
+        var customizeForm = document.getElementById('customize-form');
+        var addToCartPrice = document.getElementById('add-to-cart-price');
+        var customizationPrice = document.getElementById('customization-price');
+        var basePrice = parseInt({{ current_variant.price | divided_by: 100 }});
+        var customCharge = 50;
+        // Open modal
+        if (customizeBtn && modal && closeBtn) {
+          customizeBtn.addEventListener('click', function() {
+            modal.style.display = 'flex';
+          });
+          closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            resetPopup();
+          });
+          modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+              modal.style.display = 'none';
+              resetPopup();
+            }
+          });
+        }
+        // Skip personalization
+        if (skipBtn) {
+          skipBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'none';
+            resetPopup();
+          });
+        }
+        // Input validation
+        function isValidName(name) {
+          return /^[A-Za-z0-9 ]{1,12}$/.test(name);
+        }
+        function updatePreview() {
+          var val = engravingInput.value;
+          if (isValidName(val)) {
+            engravingPreview.textContent = val;
+            addToCartBtn.style.display = 'block';
+          } else {
+            engravingPreview.textContent = '';
+            addToCartBtn.style.display = 'none';
+          }
+        }
+        if (engravingInput && engravingPreview && addToCartBtn) {
+          engravingInput.addEventListener('input', updatePreview);
+        }
+        // Update price
+        if (addToCartPrice && customizationPrice) {
+          addToCartPrice.textContent = basePrice + customCharge;
+          customizationPrice.textContent = basePrice + customCharge;
+        }
+        // Add to cart with custom property
+        if (customizeForm) {
+          customizeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = engravingInput.value;
+            if (!isValidName(name)) {
+              engravingInput.focus();
+              return;
+            }
+            // Add to cart via AJAX
+            fetch('/cart/add.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                id: {{ current_variant.id }},
+                quantity: 1,
+                properties: { 'Engraving Name': name, 'Personalization Charge': '+₹50' }
+              })
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              // Open cart drawer
+              if (window.BT && typeof BT.runCartAction === 'function') {
+                BT.runCartAction(data, function(){});
+              } else {
+                var cartDrawerBtn = document.querySelector('.cart-sidebar-trigger');
+                if(cartDrawerBtn) cartDrawerBtn.click();
+              }
+              // Show custom checkout popup
+              setTimeout(function() { showCheckoutCustomizePopup(); }, 400);
+              window.__JUST_ADDED_VARIANT_ID = {{ current_variant.id }};
+            })
+            .catch(function(err) {
+              alert('Could not add to cart. Please try again.');
+            });
+          });
+        }
+        function resetPopup() {
+          if (engravingInput) engravingInput.value = '';
+          if (engravingPreview) engravingPreview.textContent = '';
+          if (addToCartBtn) addToCartBtn.style.display = 'none';
+        }
+      });
+    </script>
+    {% render 'checkout-customize-popup' %}
+    <script>
+    // Handle custom checkout popup actions
+    document.addEventListener('DOMContentLoaded', function() {
+      var interval = null;
+      function getCart(callback) {
+        fetch('/cart.js').then(r=>r.json()).then(callback);
+      }
+      function updateCart(items, callback) {
+        fetch('/cart/update.js', {
+          method:'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ updates: items })
+        }).then(r=>r.json()).then(callback);
+      }
+      function removeAllExcept(variantId, callback) {
+        getCart(function(cart) {
+          var updates = {};
+          cart.items.forEach(function(item) {
+            updates[item.variant_id] = (item.variant_id == variantId) ? item.quantity : 0;
+          });
+          updateCart(updates, callback);
+        });
+      }
+      function removeVariant(variantId, callback) {
+        getCart(function(cart) {
+          var updates = {};
+          cart.items.forEach(function(item) {
+            updates[item.variant_id] = (item.variant_id == variantId) ? 0 : item.quantity;
+          });
+          updateCart(updates, callback);
+        });
+      }
+      var popup = document.getElementById('checkout-customize-popup');
+      if(popup) {
+        document.getElementById('checkout-with-customize').onclick = function() {
+          var vid = window.__JUST_ADDED_VARIANT_ID;
+          if (!vid) return;
+          removeAllExcept(vid, function() {
+            window.location.href = '/checkout';
+          });
+        };
+        document.getElementById('checkout-with-other').onclick = function() {
+          var vid = window.__JUST_ADDED_VARIANT_ID;
+          if (!vid) return;
+          removeVariant(vid, function() {
+            // Just close the popup, cart remains with other items
+          });
+        };
+      }
+    });
+    </script>
+    <!-- Customize Button End -->
+    {%- assign cart_terms_for_id = 'single-page-' | append: section.id -%}
+    {%- render 'cart-terms' with for_id: cart_terms_for_id -%}
+    <div class="gutter-ele-bottom gutter-ele-bottom-tbs"></div>
   {%- endif -%}
 
   {%- if has_compare_btn or has_wishlist_btn -%}
