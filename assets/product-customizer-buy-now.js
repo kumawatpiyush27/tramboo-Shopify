@@ -8,26 +8,42 @@ function buyNowWithPersonalization(mainVariantId, engravingName) {
     return;
   }
 
+  const payload = {
+    items: [
+      {
+        id: mainVariantId,
+        quantity: 1,
+        properties: { 'Engraving Name': engravingName }
+      },
+      {
+        id: ADDON_VARIANT_ID,
+        quantity: 1
+      }
+    ]
+  };
+
+  console.log('Sending to /cart/add.js:', payload);
+
   fetch('/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      items: [
-        {
-          id: mainVariantId,
-          quantity: 1,
-          properties: { 'Engraving Name': engravingName }
-        },
-        {
-          id: ADDON_VARIANT_ID,
-          quantity: 1
-        }
-      ]
-    })
+    body: JSON.stringify(payload)
   })
-    .then(function(res) { return res.json(); })
-    .then(function() {
+    .then(function(res) {
+      if (!res.ok) {
+        return res.text().then(function(text) {
+          throw new Error('Shopify error: ' + text);
+        });
+      }
+      return res.json();
+    })
+    .then(function(data) {
+      console.log('Cart add response:', data);
       window.location.href = '/checkout';
+    })
+    .catch(function(error) {
+      console.error('Error adding to cart:', error);
+      alert('There was an error adding the add-on product: ' + error.message);
     });
 }
 
