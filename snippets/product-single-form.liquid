@@ -156,6 +156,42 @@
           <button id="buy-now-custom" type="submit" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 200 }}</span>)</button>
           <!-- <button id="buy-now-custom" type="button" style="display:none;width:100%;background:#111;color:#fff;padding:12px 0;font-size:16px;font-weight:600;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now</button> -->
         </form>
+<!-- Accordion for Terms & Conditions -->
+<div id="custom-accordion-container" style="margin:14px 0 0 0;">
+  <button id="custom-accordion-toggle" type="button" style="width:100%;background:#f5f5f5;border:1px solid #e0e0e0;border-radius:8px;padding:10px 16px;text-align:left;font-size:14px;font-weight:600;color:#222;cursor:pointer;outline:none;display:flex;align-items:center;justify-content:space-between;">
+    Terms & Conditions for product personalization
+    <span id="custom-accordion-arrow" style="font-size:18px;transition:transform 0.2s;">&#x25BC;</span>
+  </button>
+  <div id="custom-accordion-panel" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;background:#fafafa;border-radius:0 0 8px 8px;padding:0 16px;font-size:12px;color:#444;text-align:left;">
+    <ul style="margin:12px 0 10px 18px;padding:0;list-style:disc;">
+      <li>Estimated delivery time is 7-10 days.</li>
+      <li>All orders will be accepted as prepaid payment only. Cash on Delivery will not be applicable for product personalization.</li>
+      <li>No cancellations or edits will be allowed after placing the order.</li>
+      <li>No refunds will be processed for orders under any circumstances. In case of delivery failures, only reshipment will be attempted.</li>
+      <li>Reshipment may take up to 5-7 days if any product returned to origin.</li>
+      <li>Product exchanges with engraving will not be provided without engraving removal fees.</li>
+      <li>Image shown above is representational. Product color, font placement, font color might vary in reality.</li>
+    </ul>
+  </div>
+</div>
+<script>
+(function(){
+  var toggle = document.getElementById('custom-accordion-toggle');
+  var panel = document.getElementById('custom-accordion-panel');
+  var arrow = document.getElementById('custom-accordion-arrow');
+  if(toggle && panel && arrow) {
+    toggle.addEventListener('click', function() {
+      if(panel.style.maxHeight && panel.style.maxHeight !== '0px') {
+        panel.style.maxHeight = '0px';
+        arrow.style.transform = '';
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        arrow.style.transform = 'rotate(180deg)';
+      }
+    });
+  }
+})();
+</script>
         <a href="#" id="skip-customization" style="display:block;color:#1e90ff;font-size:14px;text-decoration:underline;margin-top:8px;">Skip Personalization</a>
         <button class="accordion-toggle" type="button" style="width:100%;background:#f5f5f5;border:1px solid #e0e0e0;border-radius:8px;padding:10px 16px;text-align:left;font-size:14px;font-weight:600;color:#222;cursor:pointer;outline:none;display:flex;align-items:center;justify-content:space-between;">
           Terms & Conditions for product personalization
