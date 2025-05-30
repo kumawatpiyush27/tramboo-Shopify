@@ -60,8 +60,9 @@
     <!-- Customize Button Start -->
     <div class="customize-card">
       <div>
-        <div class="customize-card__title">Make Your Product Personalised</div>
-        <div class="customize-card__desc">Get A Customized Engraving And Make It Unmistakably Yours.</div>
+        <div class="customize-card__title">Personalise your cricket bat</div>
+        <div class="customize-card__desc">Laser Name Engraving to make the bat unmistakably yours</div>
+        <div class="customize-card__desc" style="color:#d32f2f;font-weight:bold;margin-top:4px;">Only for PREPAID orders</div>
         <button id="customize-product-btn" type="button" class="customize-card__btn" style="margin-top:12px;">Customize</button>
       </div>
       <div class="customize-card__icon">
@@ -138,7 +139,9 @@
             <span id="engraving-preview" style="position:absolute;left:0;right:0;bottom:20px;font-size:20px;font-weight:600;color:#222;letter-spacing:1px;text-shadow:0 1px 3px #fff;text-align:center;width:100%;pointer-events:none;">&nbsp;</span>
           </div>
         </div>
-        <h2 style="margin-bottom:2px; font-size:22px; font-weight:700;">Personalize Your {{ product.title }}</h2>
+        <h2 style="margin-bottom:2px; font-size:22px; font-weight:700;">Personalise your cricket bat</h2>
+<div style="color:#222;font-size:15px;margin-bottom:8px;">Laser Name Engraving to make the bat unmistakably yours</div>
+<div style="color:#d32f2f;font-weight:bold;margin-bottom:12px;">Only for PREPAID orders</div>
         <div style="margin-bottom:4px; color:#888;font-size:14px;">At just ₹<span id="customization-price">{{ current_variant.price | divided_by: 100 | plus: 200 }}</span></div>
         <form id="customize-form" style="margin-top:16px;">
           <input type="text" id="engraving-name" name="properties[Engraving Name]" maxlength="12" autocomplete="off" placeholder="Your Engraving Name" style="width:100%;padding:12px 10px;font-size:16px;border-radius:6px;border:1px solid #ccc;text-align:center;margin-bottom:6px;">
