@@ -138,7 +138,7 @@
     </style>
     <!-- Customize Modal Popup -->
     <div id="customize-modal" class="customize-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;">
-      <div class="customize-modal-content" style="background:#fff;padding:32px 24px 24px 24px;border-radius:12px;max-width:90vw;width:380px;position:relative;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+      <div class="customize-modal-content" style="background:#fff;padding:32px 24px 24px 24px;border-radius:16px;max-width:98vw;width:500px;position:relative;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.18);">
         <button id="close-customize-modal" style="position:absolute;top:8px;right:8px;background:none;border:none;font-size:28px;cursor:pointer;">&times;</button>
         <div style="margin-bottom:12px;">
           <div style="position:relative;display:inline-block;">
@@ -151,48 +151,27 @@
 <div style="color:#d32f2f;font-weight:bold;margin-bottom:12px;">Only for PREPAID orders</div>
         <div style="margin-bottom:4px; color:#888;font-size:14px;">At just ₹<span id="customization-price">{{ current_variant.price | divided_by: 100 | plus: 200 }}</span></div>
         <form id="customize-form" style="margin-top:16px;">
-  <input type="text" id="engraving-name" name="properties[Engraving Name]" maxlength="12" autocomplete="off" placeholder="Your Engraving Name" style="width:100%;padding:12px 10px;font-size:16px;border-radius:6px;border:1px solid #ccc;text-align:center;margin-bottom:6px;">
-  <div style="color:#888;font-size:12px;margin-bottom:10px;">Limit text to alphabets, numbers, no emojis or special characters. Max 12 characters allowed.</div>
-  <button id="buy-now-custom" type="submit" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 200 }}</span>)</button>
-  <!-- <button id="buy-now-custom" type="button" style="display:none;width:100%;background:#111;color:#fff;padding:12px 0;font-size:16px;font-weight:600;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now</button> -->
-</form>
-<!-- Accordion for Terms & Conditions -->
-<div class="accordion-container" style="margin:14px 0 0 0;">
-  <button class="accordion-toggle" type="button" style="width:100%;background:#f5f5f5;border:1px solid #e0e0e0;border-radius:8px;padding:10px 16px;text-align:left;font-size:15px;font-weight:600;color:#222;cursor:pointer;outline:none;display:flex;align-items:center;justify-content:space-between;">
-    Terms & Conditions for product personalization
-    <span style="font-size:18px;transition:transform 0.2s;">&#x25BC;</span>
-  </button>
-  <div class="accordion-panel" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;background:#fafafa;border-radius:0 0 8px 8px;padding:0 16px;font-size:13px;color:#444;">
-    <ul style="margin:12px 0 10px 18px;padding:0;list-style:disc;">
-      <li>Estimated delivery time is 7-10 days.</li>
-      <li>All orders will be accepted as prepaid payment only. Cash on Delivery will not be applicable for product personalization.</li>
-      <li>No cancellations or edits will be allowed after placing the order.</li>
-      <li>No refunds will be processed for orders under any circumstances. In case of delivery failures, only reshipment will be attempted.</li>
-      <li>Reshipment may take up to 5-7 days if any product returned to origin.</li>
-      <li>Product exchanges with engraving will not be provided without engraving removal fees.</li>
-      <li>Image shown above is representational. Product color, font placement, font color might vary in reality.</li>
-    </ul>
-  </div>
-</div>
-<a href="#" id="skip-customization" style="display:block;color:#1e90ff;font-size:14px;text-decoration:underline;margin-top:8px;">Skip Personalization</a>
-<script>
-// Accordion functionality for T&C
-(function(){
-  var toggle = document.querySelector('.accordion-toggle');
-  var panel = document.querySelector('.accordion-panel');
-  var icon = toggle.querySelector('span');
-  toggle.addEventListener('click', function() {
-    var isOpen = panel.style.maxHeight && panel.style.maxHeight !== '0px';
-    if(isOpen) {
-      panel.style.maxHeight = null;
-      icon.style.transform = '';
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      icon.style.transform = 'rotate(180deg)';
-    }
-  });
-})();
-</script>
+          <input type="text" id="engraving-name" name="properties[Engraving Name]" maxlength="12" autocomplete="off" placeholder="Your Engraving Name" style="width:100%;padding:12px 10px;font-size:16px;border-radius:6px;border:1px solid #ccc;text-align:center;margin-bottom:6px;">
+          <div style="color:#888;font-size:12px;margin-bottom:10px;">Limit text to alphabets, numbers, no emojis or special characters. Max 12 characters allowed.</div>
+          <button id="buy-now-custom" type="submit" style="display:none;width:100%;background:#1e90ff;color:#fff;padding:12px 0;font-size:16px;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now (₹<span id="add-to-cart-price">{{ current_variant.price | divided_by: 100 | plus: 200 }}</span>)</button>
+          <!-- <button id="buy-now-custom" type="button" style="display:none;width:100%;background:#111;color:#fff;padding:12px 0;font-size:16px;font-weight:600;border:none;border-radius:4px;cursor:pointer;margin-bottom:8px;">Buy Now</button> -->
+        </form>
+        <a href="#" id="skip-customization" style="display:block;color:#1e90ff;font-size:14px;text-decoration:underline;margin-top:8px;">Skip Personalization</a>
+        <button class="accordion-toggle" type="button" style="width:100%;background:#f5f5f5;border:1px solid #e0e0e0;border-radius:8px;padding:10px 16px;text-align:left;font-size:14px;font-weight:600;color:#222;cursor:pointer;outline:none;display:flex;align-items:center;justify-content:space-between;">
+          Terms & Conditions for product personalization
+          <span style="font-size:18px;transition:transform 0.2s;">&#x25BC;</span>
+        </button>
+        <div class="accordion-panel" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;background:#fafafa;border-radius:0 0 8px 8px;padding:0 16px;font-size:12px;color:#444;text-align:left;">
+          <ul style="margin:12px 0 10px 18px;padding:0;list-style:disc;">
+            <li>Estimated delivery time is 7-10 days.</li>
+            <li>All orders will be accepted as prepaid payment only. Cash on Delivery will not be applicable for product personalization.</li>
+            <li>No cancellations or edits will be allowed after placing the order.</li>
+            <li>No refunds will be processed for orders under any circumstances. In case of delivery failures, only reshipment will be attempted.</li>
+            <li>Reshipment may take up to 5-7 days if any product returned to origin.</li>
+            <li>Product exchanges with engraving will not be provided without engraving removal fees.</li>
+            <li>Image shown above is representational. Product color, font placement, font color might vary in reality.</li>
+          </ul>
+        </div>
       </div>
     </div>
     <script>
