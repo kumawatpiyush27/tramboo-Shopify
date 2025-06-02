@@ -306,7 +306,8 @@
             })
               
             .then(function() {
-              window.location.href = '/checkout';
+            
+                gokwikSdk.initCheckout(merchantInfo);
             });
           });
         }
