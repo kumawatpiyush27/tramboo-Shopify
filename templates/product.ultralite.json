@@ -83,6 +83,7 @@
         },
         "collapsible-tab-desc": {
           "type": "collapsible_tab_desc",
+          "disabled": true,
           "settings": {
             "heading": "Description",
             "default_state": "expand",
@@ -124,6 +125,90 @@
         "collapse_tab_fs_gk": 15,
         "item_id_structure": "default",
         "target_country_structure": ""
+      }
+    },
+    "ss_feature_1_EFLjCP": {
+      "type": "ss-feature-1",
+      "blocks": {
+        "image_jFwg6c": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Free Shipping",
+            "feature_text": "",
+            "feature_url": "https://section.store/",
+            "hide_image": false
+          }
+        },
+        "image_JwHN9X": {
+          "type": "image",
+          "settings": {
+            "feature_title": "1 Year Handle Warranty",
+            "feature_text": "",
+            "feature_image": "shopify://shop_images/png-transparent-warranty-online-shopping-computer-icons-service-warranty-angle-text-service-thumbnail.png",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_AQExNC": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Partial COD available",
+            "feature_text": "",
+            "feature_image": "shopify://shop_images/images.jpg",
+            "feature_url": "",
+            "hide_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_jFwg6c",
+        "image_JwHN9X",
+        "image_AQExNC"
+      ],
+      "name": "SS - Feature #1",
+      "settings": {
+        "feature_row": 4,
+        "feature_row_mobile": 3,
+        "feature_gap": 20,
+        "feature_gap_mobile": 20,
+        "feature_padding_horizontal": 0,
+        "feature_padding_vertical": 0,
+        "feature_radius": 16,
+        "feature_border_thickness": 0,
+        "feature_shadow": false,
+        "feature_heading_custom": false,
+        "feature_heading_font": "josefin_sans_n4",
+        "feature_heading_size": 14,
+        "feature_heading_size_mobile": 12,
+        "feature_heading_height": 130,
+        "feature_heading_mt": 8,
+        "feature_text_custom": false,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 12,
+        "feature_text_size_mobile": 12,
+        "feature_text_height": 130,
+        "feature_text_mt": 4,
+        "feature_icon_size": 42,
+        "feature_icon_size_mobile": 42,
+        "feature_bg": "#FFFFFF",
+        "feature_border_color": "#000000",
+        "feature_shadow_color": "#000000",
+        "feature_heading_color": "#000000",
+        "feature_text_color": "#000000",
+        "feature_icon_color": "#000000",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
       }
     },
     "175009138562a3fba1": {
@@ -465,6 +550,7 @@
   },
   "order": [
     "main",
+    "ss_feature_1_EFLjCP",
     "175009138562a3fba1",
     "17333125631d4a791d",
     "ss_hero_27_RhJjA3",
