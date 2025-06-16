@@ -209,10 +209,10 @@
         "text_WVKjbW"
       ],
       "settings": {
-        "padding_header": 10,
+        "padding_header": 0,
         "padding_button": 10,
         "background-color": "#ffffff",
-        "padding_top": 36,
+        "padding_top": 12,
         "padding_bottom": 0,
         "section-width": 120
       }
