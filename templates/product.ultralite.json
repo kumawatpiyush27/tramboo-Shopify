@@ -163,29 +163,11 @@
             "text_mt_mobile": 12,
             "text_color": "#121212"
           }
-        },
-        "circle_BfhcHV": {
-          "type": "circle",
-          "settings": {
-            "image_width": 100,
-            "image_width_mobile": 100,
-            "image_border_radius": 100,
-            "image_border_thickness": 2,
-            "image_border_color": "#FFFFFF",
-            "rotate": true,
-            "speed": 8,
-            "vertical_position": 20,
-            "vertical_position_mobile": 50,
-            "horizontal_position": 50,
-            "horizontal_position_mobile": 50,
-            "hide_mobile": true
-          }
         }
       },
       "block_order": [
         "heading_CizUyL",
-        "text_dDkGwV",
-        "circle_BfhcHV"
+        "text_dDkGwV"
       ],
       "name": "SS - Hero #27",
       "settings": {
@@ -220,7 +202,7 @@
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
         "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_bottom": 16,
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 1,
         "full_width": true,
@@ -260,29 +242,11 @@
             "text_mt_mobile": 12,
             "text_color": "#121212"
           }
-        },
-        "circle_btipUP": {
-          "type": "circle",
-          "settings": {
-            "image_width": 100,
-            "image_width_mobile": 100,
-            "image_border_radius": 100,
-            "image_border_thickness": 2,
-            "image_border_color": "#FFFFFF",
-            "rotate": true,
-            "speed": 8,
-            "vertical_position": 20,
-            "vertical_position_mobile": 50,
-            "horizontal_position": 50,
-            "horizontal_position_mobile": 50,
-            "hide_mobile": true
-          }
         }
       },
       "block_order": [
         "heading_ky4d7j",
-        "text_KJtBaU",
-        "circle_btipUP"
+        "text_KJtBaU"
       ],
       "name": "SS - Hero #27",
       "settings": {
