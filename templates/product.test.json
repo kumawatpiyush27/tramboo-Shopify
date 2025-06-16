@@ -1,1 +1,829 @@
-{"sections":{"main":{"type":"main-product","blocks":{"group_1":{"type":"group_1","settings":{"text_1":"{{ product.vendor }}","text_style_1":"vendor","text_2":"{{ product.title }}","text_style_2":"title","show_sku":false}},"group_2":{"type":"group_2","settings":{"show_review_stars":true,"show_price":true,"show_discount_text":true,"discount_text":"FLAT [percent] OFF","show_shipping_policy_link":false,"show_countdown":false,"countdown_text":"Limited time only!"}},"judge_me_reviews_preview_badge_DdDVp4":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}},"custom_html_K8EwLA":{"type":"custom_html","disabled":true,"settings":{"custom_html":"<div>\n<svg aria-hidden=\"true\" style=\"width:30px;\" focusable=\"false\" role=\"presentation\" class=\"icon icon-globe\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}<\/style><\/defs><circle class=\"a\" cx=\"32\" cy=\"32\" r=\"22\"><\/circle><path class=\"a\" d=\"M13 21h38M10 32h44M13 43h38M32 10c-12 8-12 37 0 44M32 10c12 8 12 37 0 44\"><\/path> <\/svg> <span style=\"margin-top: -30px;display: block;width: 100%;margin-left: 40px;font-size: 14px;font-weight: 500;\">Free Shiping<\/span>\n<\/div>\n\n\n<span class=\"icon-and-text\" style=\"margin-top:10px; display:block\">\n                               <svg aria-hidden=\"true\" style=\"width:30px;\" focusable=\"false\" role=\"presentation\" class=\"icon icon-circle-checkmark\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}<\/style><\/defs><path class=\"a\" d=\"M52.68 24.48A22 22 0 1 1 47 15.93M21 32l8.5 8.5L57 13\"><\/path><\/svg>\n                                \n                              <span style=\"margin-top: -30px;display: block;width: 100%;margin-left: 40px;font-size: 14px;font-weight: 500;\">Customer Support<\/span>\n                            <\/span>\n\n<span class=\"icon-and-text\" style=\"margin-top:10px; display:block\">\n                               <svg aria-hidden=\"true\" style=\"width:30px\" focusable=\"false\" role=\"presentation\" class=\"icon icon-lock\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}<\/style><\/defs><path class=\"a\" d=\"M19.45 23.6v-3.2c0-7 5.89-11.75 12.55-11.75 7.21 0 12.55 5.49 12.55 11.75v3.2M10 23.6h44v31.75H10zM32 37.47v7.47\"><\/path><circle class=\"a\" cx=\"32\" cy=\"35.87\" r=\"1.6\"><\/circle><\/svg>\n                                \n                              <span style=\"margin-top: -30px;display: block;width: 100%;margin-left: 40px;font-size: 14px;font-weight: 500;\">Secure Payments<\/span>\n                            <\/span>\n\n<span class=\"icon-and-text\" style=\"margin-top:10px; display:block\">\n                               <svg aria-hidden=\"true\" style=\"width:30px\" focusable=\"false\" role=\"presentation\" class=\"icon icon-truck\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}<\/style><\/defs><path class=\"a\" d=\"M16.5 43.22H6.88V16.5h33.14v26.72H23.94M45.42 43.22h-5.4V30.4h17.1v12.82h-4.23M57.12 30.4l-6.41-8.56H40.02\"><\/path><circle class=\"a\" cx=\"20.24\" cy=\"43.76\" r=\"3.74\"><\/circle><path class=\"a\" d=\"M45.42 43.23a3.82 3.82 0 1 1 0 .37v-.37\"><\/path><\/svg>\n                                \n                              <span style=\"margin-top: -30px;display: block;width: 100%;margin-left: 40px;font-size: 14px;font-weight: 500;\">Delivery time 5-8 days all over India. <\/span>\n                            <\/span>"}},"king_linked_options_app_block_Qjjxby":{"type":"shopify:\/\/apps\/linkedoption-combined-listings\/blocks\/app-block\/564f3d71-fe5e-48d7-a0de-284b76666f1e","settings":{}},"variant_picker_6ijE6R":{"type":"variant_picker","settings":{}},"quantity_buy_buttons":{"type":"quantity_buy_buttons","settings":{"show_quantity_selector":true,"show_dynamic_checkout":true,"show_compare_btn":true,"show_wishlist_btn":true,"enable_shop_pay_banner":false}},"liquid_HxCL69":{"type":"liquid","settings":{"custom_liquid":"<a href=\"https:\/\/api.whatsapp.com\/send?phone=+916006070067\n&text=Hello,\n%20I%20want%20to%20buy:%20{{ product.title }}\n%20%20https%3A%2F%2F{{ product.handle }}\">\n<div class=\"order_on_whatsapp\" style=\"margin-top: 5px; margin-bottom:20px;\npadding: 16px; text-align: center; background-color: #12bf42;color:white;\">\n<img src=\"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/6\/6b\/WhatsApp.svg\/2044px-WhatsApp.svg.png\" width=\"20px\" style=\"vertical-align:middle;\">\n\nORDER ON WHATSAPP\n\n<\/div>\n<\/a>"}},"tz_trust_badges_payments_icon_shipping_information_MtixhL":{"type":"shopify:\/\/apps\/trustz\/blocks\/shipping-information\/539d151e-77d2-4b39-b20d-fbce59dc78c7","settings":{}},"collapsible-tab-desc":{"type":"collapsible_tab_desc","settings":{"heading":"Description","default_state":"expand","show_bottom_line":true}},"88e9bcca-ac67-4681-ae4e-e86670a51cba":{"type":"collapsible_tab_toolkit","settings":{"default_state":"expand","show_bottom_line":false}},"urgency_low_stock_counter_low_stock_widget_bykJeB":{"type":"shopify:\/\/apps\/urgency-low-stock-counter\/blocks\/low_stock_widget\/d9d20c6f-44d4-4f09-9a71-ac399b4761db","settings":{}}},"block_order":["group_1","group_2","judge_me_reviews_preview_badge_DdDVp4","custom_html_K8EwLA","king_linked_options_app_block_Qjjxby","variant_picker_6ijE6R","quantity_buy_buttons","liquid_HxCL69","tz_trust_badges_payments_icon_shipping_information_MtixhL","collapsible-tab-desc","88e9bcca-ac67-4681-ae4e-e86670a51cba","urgency_low_stock_counter_low_stock_widget_bykJeB"],"settings":{"show_next_prev_products":true,"show_label":true,"enable_zoom":true,"enable_small_images":true,"show_media_btn":true,"thumbs_layout":"ver_slider","sticky_images":true,"sc_enable":true,"collapse_tab_fs_mb":14,"collapse_tab_fs_gk":15,"item_id_structure":"default","target_country_structure":""}},"ss_text_block_mHwQPY":{"type":"ss-text-block","blocks":{"text_WVKjbW":{"type":"text","settings":{"heading":"<p><strong>Ready to play, with 10,000 precision knocks!<\/strong><\/p>","color":"#121212","font_size":30,"richtext":"","richtext_color":"#121212","richtext_font_size":14}}},"block_order":["text_WVKjbW"],"settings":{"padding_header":10,"padding_button":10,"background-color":"#ffffff","padding_top":36,"padding_bottom":0,"section-width":120}},"1733312459259ef7be":{"type":"apps","blocks":{"quinn_shoppable_videos_app_cards_block_PymA3K":{"type":"shopify:\/\/apps\/quinn-shoppable-videos\/blocks\/app-cards-block\/150d2781-732b-4020-a9fb-1368e974e6bb","settings":{"layer_number":1,"card_margins_desktop":"0","card_margins_mobile":"0","custom_metaobject_handle":"null","heading":"","heading_alignment":"center","heading_font_size_desktop":"16px","heading_letter_spacing_desktop":"normal","heading_font_size_mobile":"16px","heading_letter_spacing_mobile":"normal","heading_line_height_desktop":"1.2","heading_line_height_mobile":"1.2","heading_font_weight_desktop":"400","heading_font_weight_mobile":"400","heading_font":"helvetica_n4","heading_color":"#000000","heading_background_color":"#ffffff","heading_padding":"0px","heading_margin":"0px","subheading":"","subheading_alignment":"center","subheading_font":"helvetica_n4","subheading_color":"#000000","subheading_background_color":"#ffffff","subheading_padding":"0px","subheading_margin":"0px"}}},"block_order":["quinn_shoppable_videos_app_cards_block_PymA3K"],"settings":{"top_gutter":false,"bottom_gutter":false}},"173183850450d3476e":{"type":"apps","settings":{"top_gutter":false,"bottom_gutter":false}},"ss_feature_19_LpgheE":{"type":"ss-feature-19","blocks":{"feature_dBQDqg":{"type":"feature","settings":{"icon":"shield","heading":"<h3>Ready to Play<\/h3>","text":"<p>Pre Knocked with 10,000 precision knocks<\/p>"}},"feature_ifrH96":{"type":"feature","settings":{"icon":"mobile","heading":"<h3>1 Year Warranty<\/h3>","text":"<p>1 Year Handle Replacement Warranty<\/p>"}},"feature_QbDEVe":{"type":"feature","settings":{"icon":"love","heading":"<h3>Finest Kashmir Willow<\/h3>","text":"<p>Handpicked and handcrafted using the World's Finest Willow<\/p>"}}},"block_order":["feature_dBQDqg","feature_ifrH96","feature_QbDEVe"],"settings":{"body_gap":54,"body_gap_mobile":54,"body_layout":"content_image","body_layout_mobile":"content_image","heading":"<p>Key <em><strong>Features<\/strong><\/em><\/p>","heading_custom":false,"heading_font":"josefin_sans_n4","heading_size":46,"heading_size_mobile":32,"heading_height":130,"items_mt":54,"items_mt_mobile":32,"items_gap":32,"items_gap_mobile":32,"item_gap":32,"item_gap_mobile":24,"icon_size":50,"icon_size_mobile":40,"item_heading_custom":false,"item_heading_font":"josefin_sans_n4","item_heading_size":20,"item_heading_size_mobile":18,"item_heading_height":130,"item_text_custom":false,"item_text_font":"josefin_sans_n4","item_text_size":16,"item_text_size_mobile":16,"item_text_height":150,"image":"shopify:\/\/shop_images\/1_a416336d-67cf-4ffe-8d09-13de41988d9b.png","animate_bg":true,"item_width":240,"item_width_mobile":200,"item_padding_vertical":12,"item_padding_vertical_mobile":12,"item_padding_horizontal":12,"item_padding_horizontal_mobile":12,"item_radius":100,"item_border_thickness":1,"item_icon_size":32,"item_icon_size_mobile":20,"hover_item_text_custom":false,"hover_item_text_font":"josefin_sans_n4","hover_item_text_size":18,"hover_item_text_size_mobile":16,"hover_item_text_height":150,"hover_item_width":300,"hover_item_width_mobile":240,"hover_item_padding_vertical":24,"hover_item_padding_vertical_mobile":24,"hover_item_padding_horizontal":24,"hover_item_padding_horizontal_mobile":24,"hover_item_radius":20,"hover_item_border_thickness":1,"hover_item_hover_text_custom":false,"hover_item_hover_text_font":"josefin_sans_n4","hover_item_hover_text_size":16,"hover_item_hover_text_size_mobile":16,"hover_item_hover_text_height":150,"item_heading_color":"#000000","item_text_color":"#000000","item_bg_color":"#ffffff","item_border_color":"#000000","hover_item_text_color":"#000000","hover_item_hover_text_color":"#000000","hover_item_bg_color":"#ffffff","hover_item_border_color":"#000000","heading_color":"#000000","background_color":"#ffffff","background_gradient":"","border_color":"#000000","margin_top":0,"margin_bottom":0,"margin_horizontal":0,"margin_horizontal_mobile":0,"padding_top":36,"padding_bottom":36,"padding_horizontal":5,"padding_horizontal_mobile":1.5,"full_width":false,"content_width":120,"border_thickness":0,"section_radius":0,"lazy":true}},"rich_banner_UVFT4t":{"type":"rich-banner","blocks":{"rich_banner_text_wtXCVt":{"type":"rich-banner-text","settings":{"item_size":12,"item_size_mobile":12,"item_gutter_top":0,"item_gutter_bottom":0,"item_gutter_left":0,"item_gutter_right":0,"item_gutter_top_mb":0,"item_gutter_bottom_mb":0,"item_gutter_left_mb":0,"item_gutter_right_mb":0,"template":"inside","image":"shopify:\/\/shop_images\/2_7c29d0ca-e401-4031-9677-158a0fdb2ea3.png","image_mobile":"shopify:\/\/shop_images\/2_7c29d0ca-e401-4031-9677-158a0fdb2ea3.png","image_link":"","image_link_new_tab":false,"image_alignment":"left","hide_on_mobile":false,"hide_on_desktop":true,"bkg_banner_enable":false,"bkg_banner":"","text_effect_enable":true,"lcp_is_image":false,"effect_enable":false,"effect_trans_zoom":true,"effect_trans_slide":true,"effect_trans_border":true,"effect_color":"none","image_box_width_mobile":12,"image_box_width_tb":12,"image_box_width":12,"text_box_width_mobile":12,"text_box_width_tb":10,"text_box_width":8,"ver_align_text_box":false,"box_wrap":false,"standard_pos":"center-center","custom_pos":false,"pos_left":0,"pos_top":0,"text_bkg_enable":false,"text_bkg_color":"","text_bkg_opacity":100,"text_bkg_layout":"inside","text_1":"","hide_on_mobile_text_1":false,"hide_on_desktop_text_1":false,"format_text_1":"text-line","url_text_1":"","new_tab_text_1":false,"alignment_text_1":"center","color_text_1":"","button_style_text_1":"style1","button_radius_text_1":0,"button_icon_text_1":"","countdown_color_text_1":"#000000","countdown_bkg_text_1":"#ffffff","countdown_extend_text_1":0,"gutter_top_text_1":0,"gutter_bottom_text_1":0,"gutter_left_text_1":37,"gutter_right_text_1":37,"font_size_text_1":15,"line_height_text_1":27,"font_style_text_1":"normal","font_weight_text_1":"normal","letter_spacing_text_1":0,"extend_style_text_1":true,"gutter_top_mobile_text_1":0,"gutter_bottom_mobile_text_1":0,"gutter_left_mobile_text_1":37,"gutter_right_mobile_text_1":37,"font_size_mobile_text_1":15,"line_height_mobile_text_1":27,"font_style_mobile_text_1":"normal","font_weight_mobile_text_1":"normal","letter_spacing_mobile_text_1":0,"custom_class_text_1":"","text_2":"","hide_on_mobile_text_2":false,"hide_on_desktop_text_2":false,"format_text_2":"text-line","url_text_2":"","new_tab_text_2":false,"alignment_text_2":"center","color_text_2":"","button_style_text_2":"style1","button_radius_text_2":0,"button_icon_text_2":"","countdown_color_text_2":"#000000","countdown_bkg_text_2":"#ffffff","countdown_extend_text_2":0,"gutter_top_text_2":0,"gutter_bottom_text_2":0,"gutter_left_text_2":37,"gutter_right_text_2":37,"font_size_text_2":15,"line_height_text_2":27,"font_style_text_2":"normal","font_weight_text_2":"normal","letter_spacing_text_2":0,"extend_style_text_2":true,"gutter_top_mobile_text_2":0,"gutter_bottom_mobile_text_2":0,"gutter_left_mobile_text_2":37,"gutter_right_mobile_text_2":37,"font_size_mobile_text_2":15,"line_height_mobile_text_2":27,"font_style_mobile_text_2":"normal","font_weight_mobile_text_2":"normal","letter_spacing_mobile_text_2":0,"custom_class_text_2":"","text_3":"","hide_on_mobile_text_3":false,"hide_on_desktop_text_3":false,"format_text_3":"text-line","url_text_3":"","new_tab_text_3":false,"alignment_text_3":"center","color_text_3":"","button_style_text_3":"style1","button_radius_text_3":0,"button_icon_text_3":"","countdown_color_text_3":"#000000","countdown_bkg_text_3":"#ffffff","countdown_extend_text_3":0,"gutter_top_text_3":0,"gutter_bottom_text_3":0,"gutter_left_text_3":37,"gutter_right_text_3":37,"font_size_text_3":15,"line_height_text_3":27,"font_style_text_3":"normal","font_weight_text_3":"normal","letter_spacing_text_3":0,"extend_style_text_3":true,"gutter_top_mobile_text_3":0,"gutter_bottom_mobile_text_3":0,"gutter_left_mobile_text_3":37,"gutter_right_mobile_text_3":37,"font_size_mobile_text_3":15,"line_height_mobile_text_3":27,"font_style_mobile_text_3":"normal","font_weight_mobile_text_3":"normal","letter_spacing_mobile_text_3":0,"custom_class_text_3":"","text_4":"","hide_on_mobile_text_4":false,"hide_on_desktop_text_4":false,"format_text_4":"text-line","url_text_4":"","new_tab_text_4":false,"alignment_text_4":"center","color_text_4":"","button_style_text_4":"style1","button_radius_text_4":0,"button_icon_text_4":"","countdown_color_text_4":"#000000","countdown_bkg_text_4":"#ffffff","countdown_extend_text_4":0,"gutter_top_text_4":0,"gutter_bottom_text_4":0,"gutter_left_text_4":37,"gutter_right_text_4":37,"font_size_text_4":15,"line_height_text_4":27,"font_style_text_4":"normal","font_weight_text_4":"normal","letter_spacing_text_4":0,"extend_style_text_4":true,"gutter_top_mobile_text_4":0,"gutter_bottom_mobile_text_4":0,"gutter_left_mobile_text_4":37,"gutter_right_mobile_text_4":37,"font_size_mobile_text_4":15,"line_height_mobile_text_4":27,"font_style_mobile_text_4":"normal","font_weight_mobile_text_4":"normal","letter_spacing_mobile_text_4":0,"custom_class_text_4":""}}},"block_order":["rich_banner_text_wtXCVt"],"disabled":true,"settings":{"bkg_enable":false,"section_bkg":"","section_bkg_gutter":"high","section_bkg_style":"cover","top_gutter":false,"bottom_gutter":false,"title":"","heading":"","sub_title":"","full_width":false,"full_wide":false,"hidden_mobile":false,"revert_in_rtl":true,"enable_slider":false,"item_size":"medium","autoplay_slider":false,"autoplay_speed_slider":7,"arrow_slider":false,"arrow_dots":true,"ver_banner_enable":false,"ver_banner_width":3,"ver_banner_pos":"right","ver_banner_no_distance":false,"ver_effect_enable":true,"ver_effect_trans_zoom":true,"ver_effect_trans_slide":true,"ver_effect_trans_border":true,"ver_effect_color":"none","ver_banner_url_1":"","ver_banner_url_2":"","ver_banner_url_3":""}},"info_list_section_dqnXAr":{"type":"info-list-section","blocks":{"info_item_t9Ng7a":{"type":"info-item","settings":{"title":"Lightweight at 1150 - 1200 Grams Only!","short_desc":"Perfectly Balanced for superb pickup.","url":""}},"info_item_3nkyen":{"type":"info-item","settings":{"title":"5x Hard Pressed for Maximum Power","short_desc":"The bat is hard pressed more than 5 times for superior durability and stroke.","url":""}},"info_item_KD6U6f":{"type":"info-item","settings":{"title":"Made using Premium Grade 1 Kashmir Willow","short_desc":"The clefts are handpicked and crafted to perfection by our experienced craftsmen.","url":""}}},"block_order":["info_item_t9Ng7a","info_item_3nkyen","info_item_KD6U6f"],"disabled":true,"settings":{"bkg_enable":true,"section_bkg":"","section_bkg_gutter":"small","section_bkg_style":"contain","top_gutter":false,"small_top_gutter":false,"bottom_gutter":false,"small_bottom_gutter":false,"title":"","sub_title":"","image":"shopify:\/\/shop_images\/3_aa326c60-75fa-41a6-9402-0d910086f547.png","full_width":true,"show_btn":false,"btn_label":"","btn_link":""}},"faq_AVjRKk":{"type":"faq","blocks":{"faq_item_WaexNw":{"type":"faq_item","settings":{"title":"What is the weight of the bat?","content":"The bat will weight between 1150-1250 grams, perfectly balanced."}},"faq_item_p48iLV":{"type":"faq_item","settings":{"title":"What is the size?","content":"The bat is full standard size, of 33 inches, short handle and made as per ICC guidelines."}},"faq_item_JXE4CF":{"type":"faq_item","settings":{"title":"Do you offer any warranty?","content":"We offer a 6 Month Handle Replacement Warranty against manufacturing defects."}},"faq_item_xTy7PC":{"type":"faq_item","settings":{"title":"Can I play with Season \/ Leather Ball?","content":"Type your contentYes absolutely! The bat is made to be used with all kinds of balls such as season, leather, pratice and hard tennis"}},"faq_item_rfY7Fj":{"type":"faq_item","settings":{"title":"Which willow is the bat made from?","content":"We only use Premium Grade 1 Kashmir Willow!"}}},"block_order":["faq_item_WaexNw","faq_item_p48iLV","faq_item_JXE4CF","faq_item_xTy7PC","faq_item_rfY7Fj"],"settings":{"full_width":true,"hidden_xs":true}},"171825330460b9ab2c":{"type":"apps","blocks":{"judge_me_reviews_review_widget_bYipUz":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}}},"block_order":["judge_me_reviews_review_widget_bYipUz"],"settings":{"top_gutter":false,"bottom_gutter":false}},"product-crosssell":{"type":"main-product-crosssell","settings":{"bkg_enable":false,"section_bkg":"","section_bkg_gutter":"high","section_bkg_style":"cover","top_gutter":true,"bottom_gutter":true,"title":"People who bought this product also bought","sub_title":"","rule":"auto","display":"slider","limit":4,"main_thumbnail":"product_image","show_label":true,"show_cart_btn":true,"show_qs_btn":true,"show_compare_btn":true,"show_wishlist_btn":true,"show_review_stars":true,"enable_product_options":false,"product_name_size":5}}},"order":["main","ss_text_block_mHwQPY","1733312459259ef7be","173183850450d3476e","ss_feature_19_LpgheE","rich_banner_UVFT4t","info_list_section_dqnXAr","faq_AVjRKk","171825330460b9ab2c","product-crosssell"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "group_1": {
+          "type": "group_1",
+          "settings": {
+            "text_1": "{{ product.vendor }}",
+            "text_style_1": "vendor",
+            "text_2": "{{ product.title }}",
+            "text_style_2": "title",
+            "show_sku": false
+          }
+        },
+        "group_2": {
+          "type": "group_2",
+          "settings": {
+            "show_review_stars": true,
+            "show_price": true,
+            "show_discount_text": true,
+            "discount_text": "FLAT [percent] OFF",
+            "show_shipping_policy_link": false,
+            "show_countdown": false,
+            "countdown_text": "Limited time only!"
+          }
+        },
+        "judge_me_reviews_preview_badge_DdDVp4": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "custom_html_K8EwLA": {
+          "type": "custom_html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<div>\n<svg aria-hidden=\"true\" style=\"width:30px;\" focusable=\"false\" role=\"presentation\" class=\"icon icon-globe\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}</style></defs><circle class=\"a\" cx=\"32\" cy=\"32\" r=\"22\"></circle><path class=\"a\" d=\"M13 21h38M10 32h44M13 43h38M32 10c-12 8-12 37 0 44M32 10c12 8 12 37 0 44\"></path> </svg> <span style=\"margin-top: -30px;display: block;width: 100%;margin-left: 40px;font-size: 14px;font-weight: 500;\">Free Shiping</span>\n</div>\n\n\n<span class=\"icon-and-text\" style=\"margin-top:10px; display:block\">\n                               <svg aria-hidden=\"true\" style=\"width:30px;\" focusable=\"false\" role=\"presentation\" class=\"icon icon-circle-checkmark\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}</style></defs><path class=\"a\" d=\"M52.68 24.48A22 22 0 1 1 47 15.93M21 32l8.5 8.5L57 13\"></path></svg>\n                                \n                              <span style=\"margin-top: -30px;display: block;width: 100%;margin-left: 40px;font-size: 14px;font-weight: 500;\">Customer Support</span>\n                            </span>\n\n<span class=\"icon-and-text\" style=\"margin-top:10px; display:block\">\n                               <svg aria-hidden=\"true\" style=\"width:30px\" focusable=\"false\" role=\"presentation\" class=\"icon icon-lock\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}</style></defs><path class=\"a\" d=\"M19.45 23.6v-3.2c0-7 5.89-11.75 12.55-11.75 7.21 0 12.55 5.49 12.55 11.75v3.2M10 23.6h44v31.75H10zM32 37.47v7.47\"></path><circle class=\"a\" cx=\"32\" cy=\"35.87\" r=\"1.6\"></circle></svg>\n                                \n                              <span style=\"margin-top: -30px;display: block;width: 100%;margin-left: 40px;font-size: 14px;font-weight: 500;\">Secure Payments</span>\n                            </span>\n\n<span class=\"icon-and-text\" style=\"margin-top:10px; display:block\">\n                               <svg aria-hidden=\"true\" style=\"width:30px\" focusable=\"false\" role=\"presentation\" class=\"icon icon-truck\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class=\"a\" d=\"M16.5 43.22H6.88V16.5h33.14v26.72H23.94M45.42 43.22h-5.4V30.4h17.1v12.82h-4.23M57.12 30.4l-6.41-8.56H40.02\"></path><circle class=\"a\" cx=\"20.24\" cy=\"43.76\" r=\"3.74\"></circle><path class=\"a\" d=\"M45.42 43.23a3.82 3.82 0 1 1 0 .37v-.37\"></path></svg>\n                                \n                              <span style=\"margin-top: -30px;display: block;width: 100%;margin-left: 40px;font-size: 14px;font-weight: 500;\">Delivery time 5-8 days all over India. </span>\n                            </span>"
+          }
+        },
+        "king_linked_options_app_block_Qjjxby": {
+          "type": "shopify://apps/linkedoption-combined-listings/blocks/app-block/564f3d71-fe5e-48d7-a0de-284b76666f1e",
+          "settings": {}
+        },
+        "variant_picker_6ijE6R": {
+          "type": "variant_picker",
+          "settings": {}
+        },
+        "quantity_buy_buttons": {
+          "type": "quantity_buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": true,
+            "show_compare_btn": true,
+            "show_wishlist_btn": true,
+            "enable_shop_pay_banner": false
+          }
+        },
+        "liquid_HxCL69": {
+          "type": "liquid",
+          "settings": {
+            "custom_liquid": "<a href=\"https://api.whatsapp.com/send?phone=+916006070067\n&text=Hello,\n%20I%20want%20to%20buy:%20{{ product.title }}\n%20%20https%3A%2F%2F{{ product.handle }}\">\n<div class=\"order_on_whatsapp\" style=\"margin-top: 5px; margin-bottom:20px;\npadding: 16px; text-align: center; background-color: #12bf42;color:white;\">\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png\" width=\"20px\" style=\"vertical-align:middle;\">\n\nORDER ON WHATSAPP\n\n</div>\n</a>"
+          }
+        },
+        "tz_trust_badges_payments_icon_shipping_information_MtixhL": {
+          "type": "shopify://apps/trustz/blocks/shipping-information/539d151e-77d2-4b39-b20d-fbce59dc78c7",
+          "settings": {}
+        },
+        "collapsible-tab-desc": {
+          "type": "collapsible_tab_desc",
+          "settings": {
+            "heading": "Description",
+            "default_state": "expand",
+            "show_bottom_line": true
+          }
+        },
+        "88e9bcca-ac67-4681-ae4e-e86670a51cba": {
+          "type": "collapsible_tab_toolkit",
+          "settings": {
+            "default_state": "expand",
+            "show_bottom_line": false
+          }
+        },
+        "urgency_low_stock_counter_low_stock_widget_bykJeB": {
+          "type": "shopify://apps/urgency-low-stock-counter/blocks/low_stock_widget/d9d20c6f-44d4-4f09-9a71-ac399b4761db",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "group_1",
+        "group_2",
+        "judge_me_reviews_preview_badge_DdDVp4",
+        "custom_html_K8EwLA",
+        "king_linked_options_app_block_Qjjxby",
+        "variant_picker_6ijE6R",
+        "quantity_buy_buttons",
+        "liquid_HxCL69",
+        "tz_trust_badges_payments_icon_shipping_information_MtixhL",
+        "collapsible-tab-desc",
+        "88e9bcca-ac67-4681-ae4e-e86670a51cba",
+        "urgency_low_stock_counter_low_stock_widget_bykJeB"
+      ],
+      "settings": {
+        "show_next_prev_products": true,
+        "show_label": true,
+        "enable_zoom": true,
+        "enable_small_images": true,
+        "show_media_btn": true,
+        "thumbs_layout": "ver_slider",
+        "sticky_images": true,
+        "sc_enable": true,
+        "collapse_tab_fs_mb": 14,
+        "collapse_tab_fs_gk": 15,
+        "item_id_structure": "default",
+        "target_country_structure": ""
+      }
+    },
+    "ss_text_block_mHwQPY": {
+      "type": "ss-text-block",
+      "blocks": {
+        "text_WVKjbW": {
+          "type": "text",
+          "settings": {
+            "heading": "<p><strong>Ready to play, with 10,000 precision knocks!</strong></p>",
+            "color": "#121212",
+            "font_size": 30,
+            "richtext": "",
+            "richtext_color": "#121212",
+            "richtext_font_size": 14
+          }
+        }
+      },
+      "block_order": [
+        "text_WVKjbW"
+      ],
+      "settings": {
+        "padding_header": 10,
+        "padding_button": 10,
+        "background-color": "#ffffff",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "section-width": 120
+      }
+    },
+    "1733312459259ef7be": {
+      "type": "apps",
+      "blocks": {
+        "quinn_shoppable_videos_app_cards_block_PymA3K": {
+          "type": "shopify://apps/quinn-shoppable-videos/blocks/app-cards-block/150d2781-732b-4020-a9fb-1368e974e6bb",
+          "settings": {
+            "layer_number": 1,
+            "card_margins_desktop": "0",
+            "card_margins_mobile": "0",
+            "custom_metaobject_handle": "null",
+            "heading": "",
+            "heading_alignment": "center",
+            "heading_font_size_desktop": "16px",
+            "heading_letter_spacing_desktop": "normal",
+            "heading_font_size_mobile": "16px",
+            "heading_letter_spacing_mobile": "normal",
+            "heading_line_height_desktop": "1.2",
+            "heading_line_height_mobile": "1.2",
+            "heading_font_weight_desktop": "400",
+            "heading_font_weight_mobile": "400",
+            "heading_font": "helvetica_n4",
+            "heading_color": "#000000",
+            "heading_background_color": "#ffffff",
+            "heading_padding": "0px",
+            "heading_margin": "0px",
+            "subheading": "",
+            "subheading_alignment": "center",
+            "subheading_font": "helvetica_n4",
+            "subheading_color": "#000000",
+            "subheading_background_color": "#ffffff",
+            "subheading_padding": "0px",
+            "subheading_margin": "0px"
+          }
+        }
+      },
+      "block_order": [
+        "quinn_shoppable_videos_app_cards_block_PymA3K"
+      ],
+      "settings": {
+        "top_gutter": false,
+        "bottom_gutter": false
+      }
+    },
+    "173183850450d3476e": {
+      "type": "apps",
+      "settings": {
+        "top_gutter": false,
+        "bottom_gutter": false
+      }
+    },
+    "ss_feature_19_LpgheE": {
+      "type": "ss-feature-19",
+      "blocks": {
+        "feature_dBQDqg": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "heading": "<h3>Ready to Play</h3>",
+            "text": "<p>Pre Knocked with 10,000 precision knocks</p>"
+          }
+        },
+        "feature_ifrH96": {
+          "type": "feature",
+          "settings": {
+            "icon": "mobile",
+            "heading": "<h3>1 Year Warranty</h3>",
+            "text": "<p>1 Year Handle Replacement Warranty</p>"
+          }
+        },
+        "feature_QbDEVe": {
+          "type": "feature",
+          "settings": {
+            "icon": "love",
+            "heading": "<h3>Finest Kashmir Willow</h3>",
+            "text": "<p>Handpicked and handcrafted using the World's Finest Willow</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_dBQDqg",
+        "feature_ifrH96",
+        "feature_QbDEVe"
+      ],
+      "settings": {
+        "body_gap": 54,
+        "body_gap_mobile": 54,
+        "body_layout": "content_image",
+        "body_layout_mobile": "content_image",
+        "heading": "<p>Key <em><strong>Features</strong></em></p>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 46,
+        "heading_size_mobile": 32,
+        "heading_height": 130,
+        "items_mt": 54,
+        "items_mt_mobile": 32,
+        "items_gap": 32,
+        "items_gap_mobile": 32,
+        "item_gap": 32,
+        "item_gap_mobile": 24,
+        "icon_size": 50,
+        "icon_size_mobile": 40,
+        "item_heading_custom": false,
+        "item_heading_font": "josefin_sans_n4",
+        "item_heading_size": 20,
+        "item_heading_size_mobile": 18,
+        "item_heading_height": 130,
+        "item_text_custom": false,
+        "item_text_font": "josefin_sans_n4",
+        "item_text_size": 16,
+        "item_text_size_mobile": 16,
+        "item_text_height": 150,
+        "image": "shopify://shop_images/1_a416336d-67cf-4ffe-8d09-13de41988d9b.png",
+        "animate_bg": true,
+        "item_width": 240,
+        "item_width_mobile": 200,
+        "item_padding_vertical": 12,
+        "item_padding_vertical_mobile": 12,
+        "item_padding_horizontal": 12,
+        "item_padding_horizontal_mobile": 12,
+        "item_radius": 100,
+        "item_border_thickness": 1,
+        "item_icon_size": 32,
+        "item_icon_size_mobile": 20,
+        "hover_item_text_custom": false,
+        "hover_item_text_font": "josefin_sans_n4",
+        "hover_item_text_size": 18,
+        "hover_item_text_size_mobile": 16,
+        "hover_item_text_height": 150,
+        "hover_item_width": 300,
+        "hover_item_width_mobile": 240,
+        "hover_item_padding_vertical": 24,
+        "hover_item_padding_vertical_mobile": 24,
+        "hover_item_padding_horizontal": 24,
+        "hover_item_padding_horizontal_mobile": 24,
+        "hover_item_radius": 20,
+        "hover_item_border_thickness": 1,
+        "hover_item_hover_text_custom": false,
+        "hover_item_hover_text_font": "josefin_sans_n4",
+        "hover_item_hover_text_size": 16,
+        "hover_item_hover_text_size_mobile": 16,
+        "hover_item_hover_text_height": 150,
+        "item_heading_color": "#000000",
+        "item_text_color": "#000000",
+        "item_bg_color": "#ffffff",
+        "item_border_color": "#000000",
+        "hover_item_text_color": "#000000",
+        "hover_item_hover_text_color": "#000000",
+        "hover_item_bg_color": "#ffffff",
+        "hover_item_border_color": "#000000",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "ss_hero_27_M9i7Q6": {
+      "type": "ss-hero-27",
+      "blocks": {
+        "heading_fKDMzY": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h1>Hero #27</h1>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 48,
+            "heading_size_mobile": 32,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#121212"
+          }
+        },
+        "text_CWMtNy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 18,
+            "text_size_mobile": 16,
+            "text_height": 150,
+            "text_mt": 16,
+            "text_mt_mobile": 12,
+            "text_color": "#121212"
+          }
+        },
+        "button_FkzhQi": {
+          "type": "button",
+          "settings": {
+            "button": "Shop now",
+            "url": "",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 16,
+            "button_size_mobile": 14,
+            "button_height": 100,
+            "button_padding_horizontal": 32,
+            "button_padding_horizontal_mobile": 32,
+            "button_padding_vertical": 16,
+            "button_padding_vertical_mobile": 16,
+            "button_radius": 100,
+            "button_border_thickness": 1,
+            "button_mt": 24,
+            "button_mt_mobile": 20,
+            "button_style": "non_outline_arrow",
+            "button_color": "#FFFFFF",
+            "button_hover_color": "#121212",
+            "button_bg_color": "#121212",
+            "button_bg_hover_color": "#FFFFFF",
+            "button_border_color": "#121212",
+            "button_border_hover_color": "#121212"
+          }
+        },
+        "circle_DjXxrU": {
+          "type": "circle",
+          "settings": {
+            "image_width": 100,
+            "image_width_mobile": 100,
+            "image_border_radius": 100,
+            "image_border_thickness": 2,
+            "image_border_color": "#FFFFFF",
+            "rotate": true,
+            "speed": 8,
+            "vertical_position": 20,
+            "vertical_position_mobile": 50,
+            "horizontal_position": 50,
+            "horizontal_position_mobile": 50,
+            "hide_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_fKDMzY",
+        "text_CWMtNy",
+        "button_FkzhQi",
+        "circle_DjXxrU"
+      ],
+      "name": "SS - Hero #27",
+      "settings": {
+        "layout": "content_image",
+        "layout_mobile": "image_content",
+        "layout_height": "fixed_height",
+        "layout_fixed_height": 600,
+        "image_width": 50,
+        "layout_gap": 10,
+        "layout_gap_mobile": 10,
+        "content_padding_horizontal": 40,
+        "content_padding_horizontal_mobile": 24,
+        "content_padding_vertical": 32,
+        "content_padding_vertical_mobile": 32,
+        "content_radius": 16,
+        "content_border_thickness": 0,
+        "content_align": "left",
+        "content_align_mobile": "left",
+        "content_vertical_align": "center",
+        "image_ratio_mobile": "square",
+        "image_radius": 16,
+        "image_border_thickness": 0,
+        "content_bg_color": "#F3F3F3",
+        "content_border_color": "#121212",
+        "image_border_color": "#121212",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 1300,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": false
+      }
+    },
+    "rich_banner_UVFT4t": {
+      "type": "rich-banner",
+      "blocks": {
+        "rich_banner_text_wtXCVt": {
+          "type": "rich-banner-text",
+          "settings": {
+            "item_size": 12,
+            "item_size_mobile": 12,
+            "item_gutter_top": 0,
+            "item_gutter_bottom": 0,
+            "item_gutter_left": 0,
+            "item_gutter_right": 0,
+            "item_gutter_top_mb": 0,
+            "item_gutter_bottom_mb": 0,
+            "item_gutter_left_mb": 0,
+            "item_gutter_right_mb": 0,
+            "template": "inside",
+            "image": "shopify://shop_images/2_7c29d0ca-e401-4031-9677-158a0fdb2ea3.png",
+            "image_mobile": "shopify://shop_images/2_7c29d0ca-e401-4031-9677-158a0fdb2ea3.png",
+            "image_link": "",
+            "image_link_new_tab": false,
+            "image_alignment": "left",
+            "hide_on_mobile": false,
+            "hide_on_desktop": true,
+            "bkg_banner_enable": false,
+            "bkg_banner": "",
+            "text_effect_enable": true,
+            "lcp_is_image": false,
+            "effect_enable": false,
+            "effect_trans_zoom": true,
+            "effect_trans_slide": true,
+            "effect_trans_border": true,
+            "effect_color": "none",
+            "image_box_width_mobile": 12,
+            "image_box_width_tb": 12,
+            "image_box_width": 12,
+            "text_box_width_mobile": 12,
+            "text_box_width_tb": 10,
+            "text_box_width": 8,
+            "ver_align_text_box": false,
+            "box_wrap": false,
+            "standard_pos": "center-center",
+            "custom_pos": false,
+            "pos_left": 0,
+            "pos_top": 0,
+            "text_bkg_enable": false,
+            "text_bkg_color": "",
+            "text_bkg_opacity": 100,
+            "text_bkg_layout": "inside",
+            "text_1": "",
+            "hide_on_mobile_text_1": false,
+            "hide_on_desktop_text_1": false,
+            "format_text_1": "text-line",
+            "url_text_1": "",
+            "new_tab_text_1": false,
+            "alignment_text_1": "center",
+            "color_text_1": "",
+            "button_style_text_1": "style1",
+            "button_radius_text_1": 0,
+            "button_icon_text_1": "",
+            "countdown_color_text_1": "#000000",
+            "countdown_bkg_text_1": "#ffffff",
+            "countdown_extend_text_1": 0,
+            "gutter_top_text_1": 0,
+            "gutter_bottom_text_1": 0,
+            "gutter_left_text_1": 37,
+            "gutter_right_text_1": 37,
+            "font_size_text_1": 15,
+            "line_height_text_1": 27,
+            "font_style_text_1": "normal",
+            "font_weight_text_1": "normal",
+            "letter_spacing_text_1": 0,
+            "extend_style_text_1": true,
+            "gutter_top_mobile_text_1": 0,
+            "gutter_bottom_mobile_text_1": 0,
+            "gutter_left_mobile_text_1": 37,
+            "gutter_right_mobile_text_1": 37,
+            "font_size_mobile_text_1": 15,
+            "line_height_mobile_text_1": 27,
+            "font_style_mobile_text_1": "normal",
+            "font_weight_mobile_text_1": "normal",
+            "letter_spacing_mobile_text_1": 0,
+            "custom_class_text_1": "",
+            "text_2": "",
+            "hide_on_mobile_text_2": false,
+            "hide_on_desktop_text_2": false,
+            "format_text_2": "text-line",
+            "url_text_2": "",
+            "new_tab_text_2": false,
+            "alignment_text_2": "center",
+            "color_text_2": "",
+            "button_style_text_2": "style1",
+            "button_radius_text_2": 0,
+            "button_icon_text_2": "",
+            "countdown_color_text_2": "#000000",
+            "countdown_bkg_text_2": "#ffffff",
+            "countdown_extend_text_2": 0,
+            "gutter_top_text_2": 0,
+            "gutter_bottom_text_2": 0,
+            "gutter_left_text_2": 37,
+            "gutter_right_text_2": 37,
+            "font_size_text_2": 15,
+            "line_height_text_2": 27,
+            "font_style_text_2": "normal",
+            "font_weight_text_2": "normal",
+            "letter_spacing_text_2": 0,
+            "extend_style_text_2": true,
+            "gutter_top_mobile_text_2": 0,
+            "gutter_bottom_mobile_text_2": 0,
+            "gutter_left_mobile_text_2": 37,
+            "gutter_right_mobile_text_2": 37,
+            "font_size_mobile_text_2": 15,
+            "line_height_mobile_text_2": 27,
+            "font_style_mobile_text_2": "normal",
+            "font_weight_mobile_text_2": "normal",
+            "letter_spacing_mobile_text_2": 0,
+            "custom_class_text_2": "",
+            "text_3": "",
+            "hide_on_mobile_text_3": false,
+            "hide_on_desktop_text_3": false,
+            "format_text_3": "text-line",
+            "url_text_3": "",
+            "new_tab_text_3": false,
+            "alignment_text_3": "center",
+            "color_text_3": "",
+            "button_style_text_3": "style1",
+            "button_radius_text_3": 0,
+            "button_icon_text_3": "",
+            "countdown_color_text_3": "#000000",
+            "countdown_bkg_text_3": "#ffffff",
+            "countdown_extend_text_3": 0,
+            "gutter_top_text_3": 0,
+            "gutter_bottom_text_3": 0,
+            "gutter_left_text_3": 37,
+            "gutter_right_text_3": 37,
+            "font_size_text_3": 15,
+            "line_height_text_3": 27,
+            "font_style_text_3": "normal",
+            "font_weight_text_3": "normal",
+            "letter_spacing_text_3": 0,
+            "extend_style_text_3": true,
+            "gutter_top_mobile_text_3": 0,
+            "gutter_bottom_mobile_text_3": 0,
+            "gutter_left_mobile_text_3": 37,
+            "gutter_right_mobile_text_3": 37,
+            "font_size_mobile_text_3": 15,
+            "line_height_mobile_text_3": 27,
+            "font_style_mobile_text_3": "normal",
+            "font_weight_mobile_text_3": "normal",
+            "letter_spacing_mobile_text_3": 0,
+            "custom_class_text_3": "",
+            "text_4": "",
+            "hide_on_mobile_text_4": false,
+            "hide_on_desktop_text_4": false,
+            "format_text_4": "text-line",
+            "url_text_4": "",
+            "new_tab_text_4": false,
+            "alignment_text_4": "center",
+            "color_text_4": "",
+            "button_style_text_4": "style1",
+            "button_radius_text_4": 0,
+            "button_icon_text_4": "",
+            "countdown_color_text_4": "#000000",
+            "countdown_bkg_text_4": "#ffffff",
+            "countdown_extend_text_4": 0,
+            "gutter_top_text_4": 0,
+            "gutter_bottom_text_4": 0,
+            "gutter_left_text_4": 37,
+            "gutter_right_text_4": 37,
+            "font_size_text_4": 15,
+            "line_height_text_4": 27,
+            "font_style_text_4": "normal",
+            "font_weight_text_4": "normal",
+            "letter_spacing_text_4": 0,
+            "extend_style_text_4": true,
+            "gutter_top_mobile_text_4": 0,
+            "gutter_bottom_mobile_text_4": 0,
+            "gutter_left_mobile_text_4": 37,
+            "gutter_right_mobile_text_4": 37,
+            "font_size_mobile_text_4": 15,
+            "line_height_mobile_text_4": 27,
+            "font_style_mobile_text_4": "normal",
+            "font_weight_mobile_text_4": "normal",
+            "letter_spacing_mobile_text_4": 0,
+            "custom_class_text_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "rich_banner_text_wtXCVt"
+      ],
+      "disabled": true,
+      "settings": {
+        "bkg_enable": false,
+        "section_bkg": "",
+        "section_bkg_gutter": "high",
+        "section_bkg_style": "cover",
+        "top_gutter": false,
+        "bottom_gutter": false,
+        "title": "",
+        "heading": "",
+        "sub_title": "",
+        "full_width": false,
+        "full_wide": false,
+        "hidden_mobile": false,
+        "revert_in_rtl": true,
+        "enable_slider": false,
+        "item_size": "medium",
+        "autoplay_slider": false,
+        "autoplay_speed_slider": 7,
+        "arrow_slider": false,
+        "arrow_dots": true,
+        "ver_banner_enable": false,
+        "ver_banner_width": 3,
+        "ver_banner_pos": "right",
+        "ver_banner_no_distance": false,
+        "ver_effect_enable": true,
+        "ver_effect_trans_zoom": true,
+        "ver_effect_trans_slide": true,
+        "ver_effect_trans_border": true,
+        "ver_effect_color": "none",
+        "ver_banner_url_1": "",
+        "ver_banner_url_2": "",
+        "ver_banner_url_3": ""
+      }
+    },
+    "info_list_section_dqnXAr": {
+      "type": "info-list-section",
+      "blocks": {
+        "info_item_t9Ng7a": {
+          "type": "info-item",
+          "settings": {
+            "title": "Lightweight at 1150 - 1200 Grams Only!",
+            "short_desc": "Perfectly Balanced for superb pickup.",
+            "url": ""
+          }
+        },
+        "info_item_3nkyen": {
+          "type": "info-item",
+          "settings": {
+            "title": "5x Hard Pressed for Maximum Power",
+            "short_desc": "The bat is hard pressed more than 5 times for superior durability and stroke.",
+            "url": ""
+          }
+        },
+        "info_item_KD6U6f": {
+          "type": "info-item",
+          "settings": {
+            "title": "Made using Premium Grade 1 Kashmir Willow",
+            "short_desc": "The clefts are handpicked and crafted to perfection by our experienced craftsmen.",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "info_item_t9Ng7a",
+        "info_item_3nkyen",
+        "info_item_KD6U6f"
+      ],
+      "disabled": true,
+      "settings": {
+        "bkg_enable": true,
+        "section_bkg": "",
+        "section_bkg_gutter": "small",
+        "section_bkg_style": "contain",
+        "top_gutter": false,
+        "small_top_gutter": false,
+        "bottom_gutter": false,
+        "small_bottom_gutter": false,
+        "title": "",
+        "sub_title": "",
+        "image": "shopify://shop_images/3_aa326c60-75fa-41a6-9402-0d910086f547.png",
+        "full_width": true,
+        "show_btn": false,
+        "btn_label": "",
+        "btn_link": ""
+      }
+    },
+    "faq_AVjRKk": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_WaexNw": {
+          "type": "faq_item",
+          "settings": {
+            "title": "What is the weight of the bat?",
+            "content": "The bat will weight between 1150-1250 grams, perfectly balanced."
+          }
+        },
+        "faq_item_p48iLV": {
+          "type": "faq_item",
+          "settings": {
+            "title": "What is the size?",
+            "content": "The bat is full standard size, of 33 inches, short handle and made as per ICC guidelines."
+          }
+        },
+        "faq_item_JXE4CF": {
+          "type": "faq_item",
+          "settings": {
+            "title": "Do you offer any warranty?",
+            "content": "We offer a 6 Month Handle Replacement Warranty against manufacturing defects."
+          }
+        },
+        "faq_item_xTy7PC": {
+          "type": "faq_item",
+          "settings": {
+            "title": "Can I play with Season / Leather Ball?",
+            "content": "Type your contentYes absolutely! The bat is made to be used with all kinds of balls such as season, leather, pratice and hard tennis"
+          }
+        },
+        "faq_item_rfY7Fj": {
+          "type": "faq_item",
+          "settings": {
+            "title": "Which willow is the bat made from?",
+            "content": "We only use Premium Grade 1 Kashmir Willow!"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_WaexNw",
+        "faq_item_p48iLV",
+        "faq_item_JXE4CF",
+        "faq_item_xTy7PC",
+        "faq_item_rfY7Fj"
+      ],
+      "settings": {
+        "full_width": true,
+        "hidden_xs": true
+      }
+    },
+    "171825330460b9ab2c": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_bYipUz": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_bYipUz"
+      ],
+      "settings": {
+        "top_gutter": false,
+        "bottom_gutter": false
+      }
+    },
+    "product-crosssell": {
+      "type": "main-product-crosssell",
+      "settings": {
+        "bkg_enable": false,
+        "section_bkg": "",
+        "section_bkg_gutter": "high",
+        "section_bkg_style": "cover",
+        "top_gutter": true,
+        "bottom_gutter": true,
+        "title": "People who bought this product also bought",
+        "sub_title": "",
+        "rule": "auto",
+        "display": "slider",
+        "limit": 4,
+        "main_thumbnail": "product_image",
+        "show_label": true,
+        "show_cart_btn": true,
+        "show_qs_btn": true,
+        "show_compare_btn": true,
+        "show_wishlist_btn": true,
+        "show_review_stars": true,
+        "enable_product_options": false,
+        "product_name_size": 5
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ss_text_block_mHwQPY",
+    "1733312459259ef7be",
+    "173183850450d3476e",
+    "ss_feature_19_LpgheE",
+    "ss_hero_27_M9i7Q6",
+    "rich_banner_UVFT4t",
+    "info_list_section_dqnXAr",
+    "faq_AVjRKk",
+    "171825330460b9ab2c",
+    "product-crosssell"
+  ]
+}
