@@ -22,6 +22,10 @@
             "show_sku": false
           }
         },
+        "judge_me_reviews_preview_badge_DdDVp4": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "group_2": {
           "type": "group_2",
           "settings": {
@@ -33,10 +37,6 @@
             "show_countdown": false,
             "countdown_text": "Limited time only!"
           }
-        },
-        "judge_me_reviews_preview_badge_DdDVp4": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
         },
         "custom_html_K8EwLA": {
           "type": "custom_html",
@@ -95,8 +95,8 @@
       },
       "block_order": [
         "group_1",
-        "group_2",
         "judge_me_reviews_preview_badge_DdDVp4",
+        "group_2",
         "custom_html_K8EwLA",
         "king_linked_options_app_block_Qjjxby",
         "variant_picker_6ijE6R",
@@ -363,11 +363,11 @@
         "layout_fixed_height": 600,
         "image_width": 50,
         "layout_gap": 10,
-        "layout_gap_mobile": 10,
+        "layout_gap_mobile": 8,
         "content_padding_horizontal": 40,
         "content_padding_horizontal_mobile": 14,
         "content_padding_vertical": 32,
-        "content_padding_vertical_mobile": 30,
+        "content_padding_vertical_mobile": 16,
         "content_radius": 16,
         "content_border_thickness": 0,
         "content_align": "left",
@@ -377,10 +377,10 @@
         "image_ratio_mobile": "square",
         "image_radius": 16,
         "image_border_thickness": 0,
-        "content_bg_color": "#F3F3F3",
+        "content_bg_color": "#f3f3f3",
         "content_border_color": "#121212",
         "image_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#121212",
         "margin_top": 0,
@@ -388,9 +388,9 @@
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
         "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_bottom": 20,
         "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
+        "padding_horizontal_mobile": 1,
         "full_width": true,
         "content_width": 1300,
         "border_thickness": 0,
@@ -446,7 +446,7 @@
         "content_padding_horizontal": 40,
         "content_padding_horizontal_mobile": 24,
         "content_padding_vertical": 32,
-        "content_padding_vertical_mobile": 32,
+        "content_padding_vertical_mobile": 16,
         "content_radius": 16,
         "content_border_thickness": 0,
         "content_align": "left",
@@ -456,10 +456,10 @@
         "image_ratio_mobile": "square",
         "image_radius": 16,
         "image_border_thickness": 0,
-        "content_bg_color": "#F3F3F3",
+        "content_bg_color": "#f3f3f3",
         "content_border_color": "#121212",
         "image_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#121212",
         "margin_top": 0,
@@ -467,9 +467,9 @@
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
         "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_bottom": 20,
         "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
+        "padding_horizontal_mobile": 1,
         "full_width": true,
         "content_width": 1300,
         "border_thickness": 0,
@@ -755,57 +755,6 @@
         "btn_link": ""
       }
     },
-    "faq_AVjRKk": {
-      "type": "faq",
-      "blocks": {
-        "faq_item_WaexNw": {
-          "type": "faq_item",
-          "settings": {
-            "title": "What is the weight of the bat?",
-            "content": "The bat will weight between 1150-1250 grams, perfectly balanced."
-          }
-        },
-        "faq_item_p48iLV": {
-          "type": "faq_item",
-          "settings": {
-            "title": "What is the size?",
-            "content": "The bat is full standard size, of 33 inches, short handle and made as per ICC guidelines."
-          }
-        },
-        "faq_item_JXE4CF": {
-          "type": "faq_item",
-          "settings": {
-            "title": "Do you offer any warranty?",
-            "content": "We offer a 6 Month Handle Replacement Warranty against manufacturing defects."
-          }
-        },
-        "faq_item_xTy7PC": {
-          "type": "faq_item",
-          "settings": {
-            "title": "Can I play with Season / Leather Ball?",
-            "content": "Type your contentYes absolutely! The bat is made to be used with all kinds of balls such as season, leather, pratice and hard tennis"
-          }
-        },
-        "faq_item_rfY7Fj": {
-          "type": "faq_item",
-          "settings": {
-            "title": "Which willow is the bat made from?",
-            "content": "We only use Premium Grade 1 Kashmir Willow!"
-          }
-        }
-      },
-      "block_order": [
-        "faq_item_WaexNw",
-        "faq_item_p48iLV",
-        "faq_item_JXE4CF",
-        "faq_item_xTy7PC",
-        "faq_item_rfY7Fj"
-      ],
-      "settings": {
-        "full_width": true,
-        "hidden_xs": true
-      }
-    },
     "ss_hero_27_en9J9a": {
       "type": "ss-hero-27",
       "blocks": {
@@ -864,10 +813,10 @@
         "image_ratio_mobile": "square",
         "image_radius": 16,
         "image_border_thickness": 0,
-        "content_bg_color": "#F3F3F3",
+        "content_bg_color": "#f3f3f3",
         "content_border_color": "#121212",
         "image_border_color": "#121212",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#121212",
         "margin_top": 0,
@@ -875,14 +824,65 @@
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
         "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_bottom": 20,
         "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
+        "padding_horizontal_mobile": 1,
         "full_width": true,
         "content_width": 1300,
         "border_thickness": 0,
         "section_radius": 0,
         "lazy": false
+      }
+    },
+    "faq_AVjRKk": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_WaexNw": {
+          "type": "faq_item",
+          "settings": {
+            "title": "What is the weight of the bat?",
+            "content": "The bat will weight between 1150-1250 grams, perfectly balanced."
+          }
+        },
+        "faq_item_p48iLV": {
+          "type": "faq_item",
+          "settings": {
+            "title": "What is the size?",
+            "content": "The bat is full standard size, of 33 inches, short handle and made as per ICC guidelines."
+          }
+        },
+        "faq_item_JXE4CF": {
+          "type": "faq_item",
+          "settings": {
+            "title": "Do you offer any warranty?",
+            "content": "We offer a 6 Month Handle Replacement Warranty against manufacturing defects."
+          }
+        },
+        "faq_item_xTy7PC": {
+          "type": "faq_item",
+          "settings": {
+            "title": "Can I play with Season / Leather Ball?",
+            "content": "Type your contentYes absolutely! The bat is made to be used with all kinds of balls such as season, leather, pratice and hard tennis"
+          }
+        },
+        "faq_item_rfY7Fj": {
+          "type": "faq_item",
+          "settings": {
+            "title": "Which willow is the bat made from?",
+            "content": "We only use Premium Grade 1 Kashmir Willow!"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_WaexNw",
+        "faq_item_p48iLV",
+        "faq_item_JXE4CF",
+        "faq_item_xTy7PC",
+        "faq_item_rfY7Fj"
+      ],
+      "settings": {
+        "full_width": true,
+        "hidden_xs": true
       }
     },
     "171825330460b9ab2c": {
@@ -937,8 +937,8 @@
     "ss_hero_27_cteHwb",
     "rich_banner_UVFT4t",
     "info_list_section_dqnXAr",
-    "faq_AVjRKk",
     "ss_hero_27_en9J9a",
+    "faq_AVjRKk",
     "171825330460b9ab2c",
     "product-crosssell"
   ]
