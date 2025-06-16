@@ -232,6 +232,7 @@
         "feature_ifrH96",
         "feature_QbDEVe"
       ],
+      "disabled": true,
       "settings": {
         "body_gap": 54,
         "body_gap_mobile": 54,
@@ -316,6 +317,164 @@
         "border_thickness": 0,
         "section_radius": 0,
         "lazy": true
+      }
+    },
+    "ss_hero_27_Bkq9Wj": {
+      "type": "ss-hero-27",
+      "blocks": {
+        "heading_hHREyJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Worlds Best Willow</p>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 46,
+            "heading_size_mobile": 28,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#121212"
+          }
+        },
+        "text_erzJiC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our Premium Willow is carefully hand-selected for its straight grains, strength, and natural power. Expertly crafted, it offers perfect balance, long-lasting durability, and top-level performance trusted by serious players.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 18,
+            "text_size_mobile": 16,
+            "text_height": 150,
+            "text_mt": 16,
+            "text_mt_mobile": 12,
+            "text_color": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hHREyJ",
+        "text_erzJiC"
+      ],
+      "name": "SS - Hero #27",
+      "settings": {
+        "layout": "content_image",
+        "layout_mobile": "image_content",
+        "layout_height": "fixed_height",
+        "layout_fixed_height": 600,
+        "image_width": 50,
+        "layout_gap": 10,
+        "layout_gap_mobile": 10,
+        "content_padding_horizontal": 40,
+        "content_padding_horizontal_mobile": 14,
+        "content_padding_vertical": 32,
+        "content_padding_vertical_mobile": 30,
+        "content_radius": 16,
+        "content_border_thickness": 0,
+        "content_align": "left",
+        "content_align_mobile": "left",
+        "content_vertical_align": "center",
+        "image": "shopify://shop_images/1_44b40549-31e4-4560-8c26-bdb63fb9e4f2.png",
+        "image_ratio_mobile": "square",
+        "image_radius": 16,
+        "image_border_thickness": 0,
+        "content_bg_color": "#F3F3F3",
+        "content_border_color": "#121212",
+        "image_border_color": "#121212",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 1300,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": false
+      }
+    },
+    "ss_hero_27_cteHwb": {
+      "type": "ss-hero-27",
+      "blocks": {
+        "heading_zawWhi": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h1>1150-1220 Grams Only!</h1>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 48,
+            "heading_size_mobile": 30,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#121212"
+          }
+        },
+        "text_fF3Lfp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We use advanced engineering to reduce excess moisture from the wood while maintaining strength. </p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 18,
+            "text_size_mobile": 16,
+            "text_height": 150,
+            "text_mt": 16,
+            "text_mt_mobile": 12,
+            "text_color": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zawWhi",
+        "text_fF3Lfp"
+      ],
+      "name": "SS - Hero #27",
+      "settings": {
+        "layout": "content_image",
+        "layout_mobile": "image_content",
+        "layout_height": "fixed_height",
+        "layout_fixed_height": 600,
+        "image_width": 50,
+        "layout_gap": 10,
+        "layout_gap_mobile": 10,
+        "content_padding_horizontal": 40,
+        "content_padding_horizontal_mobile": 24,
+        "content_padding_vertical": 32,
+        "content_padding_vertical_mobile": 32,
+        "content_radius": 16,
+        "content_border_thickness": 0,
+        "content_align": "left",
+        "content_align_mobile": "left",
+        "content_vertical_align": "center",
+        "image": "shopify://shop_images/2_70438ac6-379f-4070-b103-84ca91db2d8b.png",
+        "image_ratio_mobile": "square",
+        "image_radius": 16,
+        "image_border_thickness": 0,
+        "content_bg_color": "#F3F3F3",
+        "content_border_color": "#121212",
+        "image_border_color": "#121212",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 1300,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": false
       }
     },
     "rich_banner_UVFT4t": {
@@ -647,6 +806,85 @@
         "hidden_xs": true
       }
     },
+    "ss_hero_27_en9J9a": {
+      "type": "ss-hero-27",
+      "blocks": {
+        "heading_KbXhy8": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h1>Ready to Play</h1>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 48,
+            "heading_size_mobile": 32,
+            "heading_height": 130,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#121212"
+          }
+        },
+        "text_qkNer3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>All Alpine Edition bats are machine knocked and are ready to play straight away!</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 18,
+            "text_size_mobile": 16,
+            "text_height": 150,
+            "text_mt": 16,
+            "text_mt_mobile": 12,
+            "text_color": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KbXhy8",
+        "text_qkNer3"
+      ],
+      "name": "SS - Hero #27",
+      "settings": {
+        "layout": "content_image",
+        "layout_mobile": "image_content",
+        "layout_height": "fixed_height",
+        "layout_fixed_height": 600,
+        "image_width": 50,
+        "layout_gap": 10,
+        "layout_gap_mobile": 10,
+        "content_padding_horizontal": 40,
+        "content_padding_horizontal_mobile": 24,
+        "content_padding_vertical": 32,
+        "content_padding_vertical_mobile": 32,
+        "content_radius": 16,
+        "content_border_thickness": 0,
+        "content_align": "left",
+        "content_align_mobile": "left",
+        "content_vertical_align": "center",
+        "image": "shopify://shop_images/3_3773be9d-228d-4590-a726-efc9a9d456fe.png",
+        "image_ratio_mobile": "square",
+        "image_radius": 16,
+        "image_border_thickness": 0,
+        "content_bg_color": "#F3F3F3",
+        "content_border_color": "#121212",
+        "image_border_color": "#121212",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 1300,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": false
+      }
+    },
     "171825330460b9ab2c": {
       "type": "apps",
       "blocks": {
@@ -695,9 +933,12 @@
     "1733312459259ef7be",
     "173183850450d3476e",
     "ss_feature_19_LpgheE",
+    "ss_hero_27_Bkq9Wj",
+    "ss_hero_27_cteHwb",
     "rich_banner_UVFT4t",
     "info_list_section_dqnXAr",
     "faq_AVjRKk",
+    "ss_hero_27_en9J9a",
     "171825330460b9ab2c",
     "product-crosssell"
   ]
