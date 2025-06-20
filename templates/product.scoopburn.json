@@ -55,7 +55,7 @@
             "show_quantity_selector": true,
             "show_dynamic_checkout": true,
             "show_compare_btn": true,
-            "show_wishlist_btn": true,
+            "show_wishlist_btn": false,
             "enable_shop_pay_banner": false
           }
         },
@@ -225,22 +225,6 @@
         "btn_link": ""
       }
     },
-    "1750411002ec196986": {
-      "type": "apps",
-      "blocks": {
-        "trustz_additional_information_mKRPPD": {
-          "type": "shopify://apps/trustz/blocks/additional-information/539d151e-77d2-4b39-b20d-fbce59dc78c7",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "trustz_additional_information_mKRPPD"
-      ],
-      "settings": {
-        "top_gutter": false,
-        "bottom_gutter": false
-      }
-    },
     "faq_AVjRKk": {
       "type": "faq",
       "blocks": {
@@ -349,7 +333,6 @@
     "main",
     "17333128110c7aa8dc",
     "info_list_section_dqnXAr",
-    "1750411002ec196986",
     "faq_AVjRKk",
     "171825330460b9ab2c",
     "16270155831ac2d89c",
