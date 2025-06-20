@@ -212,6 +212,22 @@
         "lazy": true
       }
     },
+    "175041048111f9db21": {
+      "type": "apps",
+      "blocks": {
+        "trustz_additional_information_7cVYJy": {
+          "type": "shopify://apps/trustz/blocks/additional-information/539d151e-77d2-4b39-b20d-fbce59dc78c7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "trustz_additional_information_7cVYJy"
+      ],
+      "settings": {
+        "top_gutter": false,
+        "bottom_gutter": false
+      }
+    },
     "175009138562a3fba1": {
       "type": "apps",
       "settings": {
@@ -552,6 +568,7 @@
   "order": [
     "main",
     "ss_feature_1_EFLjCP",
+    "175041048111f9db21",
     "175009138562a3fba1",
     "17333125631d4a791d",
     "ss_hero_27_RhJjA3",
