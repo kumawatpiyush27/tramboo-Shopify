@@ -78,6 +78,10 @@
             "show_payment_badge": true
           }
         },
+        "trustz_additional_information_n9k9Nn": {
+          "type": "shopify://apps/trustz/blocks/additional-information/539d151e-77d2-4b39-b20d-fbce59dc78c7",
+          "settings": {}
+        },
         "collapsible-tab-desc": {
           "type": "collapsible_tab_desc",
           "settings": {
@@ -104,6 +108,7 @@
         "liquid_R93iNG",
         "store-availability",
         "group_3",
+        "trustz_additional_information_n9k9Nn",
         "collapsible-tab-desc",
         "88e9bcca-ac67-4681-ae4e-e86670a51cba"
       ],
