@@ -212,6 +212,7 @@
         "info_item_3nkyen",
         "info_item_KD6U6f"
       ],
+      "disabled": true,
       "settings": {
         "bkg_enable": true,
         "section_bkg": "",
