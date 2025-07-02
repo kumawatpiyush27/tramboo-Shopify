@@ -199,7 +199,6 @@
         },
         "rich_banner_text_Q7wDMJ": {
           "type": "rich-banner-text",
-          "disabled": true,
           "settings": {
             "item_size": 12,
             "item_size_mobile": 12,
@@ -213,8 +212,8 @@
             "item_gutter_right_mb": 0,
             "template": "inside",
             "image": "shopify://shop_images/SCOOP-MOBILEBANNER.png",
-            "image_mobile": "shopify://shop_images/SCOOP-MOBILEBANNER.png",
-            "image_link": "shopify://products/hard-tennis-scoop-bat-burnt-edition",
+            "image_mobile": "shopify://shop_images/Ultralite_1080x1920_768_x_1080_px.png",
+            "image_link": "shopify://products/ultralite-hard-tennis-bat",
             "image_link_new_tab": false,
             "image_alignment": "left",
             "hide_on_mobile": false,
