@@ -1137,7 +1137,7 @@
             "item_gutter_right_mb": 0,
             "template": "inside",
             "image": "shopify://shop_images/alpine-banner.jpg",
-            "image_mobile": "shopify://shop_images/WORLD_S_FINEST_WILLOW_768_x_1080_px.jpg",
+            "image_mobile": "shopify://shop_images/WORLD_S_FINEST_WILLOW_768_x_1080_px.png",
             "image_link": "shopify://collections/alpine-edition-worlds-best-leather-bats",
             "image_link_new_tab": false,
             "image_alignment": "left",
