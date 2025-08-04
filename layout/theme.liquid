@@ -378,36 +378,5 @@ border-radius: 10px !important;
 
 	 {% include 'shine-trust.liquid' %} 
 	 {%- render "ecom_footer"-%}
-   <!-- Popin Script -->
-    <script>
-      let popIn = document.createElement('script')
-      popIn.setAttribute('src', 'https://widget01.popin.to/js/widget.js')
-      document.body.appendChild(popIn)
-      popIn.onload = () => {
-        popInWidgetInit({
-          token: "12860",
-          mode: "hidden"
-        });
-      }
-    </script>
-    <!-- Popin Button -->
-    <button class="popin-floating-button" onclick="Popin('open')">
-      <span class="popin-floating-button-icon">
-        <div class="pulse one"></div>
-        <div class="pulse two"></div>
-        <svg
-          stroke="currentColor"
-          fill="currentColor"
-          stroke-width="0"
-          viewBox="0 0 576 512"
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z"></path>
-        </svg>
-      </span>
-      Live Shop
-    </button>
   </body>
 </html>
