@@ -5,3 +5,136 @@
 #shopify-section-template--22343752548660__custom_html_yTicgR .container-fluid {
     padding: 0px !important;
 }
+
+/* Popin Style */
+.popin-floating-button{
+  position: fixed;
+  top: calc(50% - 84px);
+  right: -100px;
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 14px 8px 14px 52px;
+  background: #3E65C4;
+  color: #ffffff;
+  border: 0;
+  border-radius: 50px 0 0 50px;
+  transition: all 0.3s;
+  cursor: pointer;
+  z-index: 9999 !important;
+cursor: pointer;
+}
+
+.popin-floating-button-icon{
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  height: 38px;
+  width: 38px;
+  background: #ffffff;
+  border: 0;
+  border-radius: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popin-floating-button-icon svg {
+  fill: #3E65C4;
+  z-index: 5;
+}
+
+.popin-floating-button-icon .pulse {
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  opacity: 0;
+  background: #3E65C4;
+  width: 16px;
+  height: 16px;
+  border-radius: 25px;
+  animation-name: golive-scale-fade;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  z-index: 1;
+}
+
+.popin-floating-button-icon .pulse.two {
+  animation-delay: 0.25s;
+}
+
+.popin-floating-button:hover{
+  right: 0;
+}
+
+ .popin-button {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        background-color: #000000;
+        color: #ffffff;
+        padding: 12px 12px;
+        margin: 0 0 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popin-button:hover {
+        opacity: 0.9;
+    }
+
+    .popin-button svg {
+        height: 20px;
+        width: 20px;
+        margin-right: 16px;
+    }
+
+    .popin-button-text {
+        position: relative;
+    }
+
+    .popin-blinker {
+        position: absolute;
+        top: 0px;
+        left: -14px;
+        width: 6px;
+        height: 6px;
+        border: 0;
+        border-radius: 50%;
+        background-color: #ff0000;
+        animation: animate-popin-blink 1s ease-in-out infinite;
+    }
+
+    @keyframes golive-scale-fade {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+    @keyframes animate-popin-blink {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
