@@ -56,6 +56,16 @@
     </div>
     {% endif %}
   {%- endif -%}
+  <!-- Popin Button -->
+  <button class="popin-button" onclick="event.preventDefault(); Popin('open')">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z" />
+    </svg>
+    <span class="popin-button-text">
+        <span class="popin-blinker"></span>
+        Live Shop
+    </span>
+</button>
   {%- if template.suffix != 'quick_view' and template.suffix != 'select_option' -%}
     <!-- Customize Button Start -->
     <div class="customize-card" style="background:#e8f5e9;border-radius:16px;border:1px solid #b2dfdb;padding:14px 18px;margin-top:14px;box-shadow:0 2px 12px rgba(39,174,96,0.08);">
